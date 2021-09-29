@@ -13,7 +13,6 @@
 ## 1. Git 저장소 만들기
 
 ```bash
-User@DESKTOP-THOHAFO MINGW64 ~/Desktop/test
 $ git init
 Initialized empty Git repository in C:/Users/User/Desktop/test/.git/
 User@DESKTOP-THOHAFO MINGW64 ~/Desktop/test (master)
@@ -21,7 +20,7 @@ $
 ```
 
 - .git 폴더가 생성되며, 버전이 관리되는 저장소
-- git bash에서는 (master)로 브랜치가 표기된다.
+- git bash에서는 경로 옆의 ()안에 브랜치가 표기된다. 위의 브랜치는 master
 
 
 
@@ -54,7 +53,6 @@ $ git add *.png # 특정 확장자
 #### 예시
 
 ```bash
-User@DESKTOP-THOHAFO MINGW64 ~/Desktop/test (master)
 $ git status
 On branch master
 
@@ -63,8 +61,8 @@ No commits yet
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
         a.txt
-# 작업공간에서 작업한 파일들이 아직 Staging Area로 이동하지 않은 것이다.
 nothing added to commit but untracked files present (use "git add" to track)
+# 작업공간에서 작업한 파일들이 아직 Staging Area로 이동하지 않은 것이다.
 User@DESKTOP-THOHAFO MINGW64 ~/Desktop/test (master)
 $ git add .
 # add 명령어를 통해 작업공간의 파일들을 Staging Area로 이동시킨다.
@@ -87,7 +85,6 @@ $ git commit -m '<커밋메시지>'
 #### 예시
 
 ```bash
-User@DESKTOP-THOHAFO MINGW64 ~/Desktop/test (master)
 $ git commit -m "First Commit"
 [master (root-commit) 7f9f854] First Commit
  1 files changed, 0 insertions(+), 0 deletions(-)
@@ -111,7 +108,6 @@ $ git status
 #### 예시
 
 ```bash
-User@DESKTOP-THOHAFO MINGW64 ~/Desktop/test (master)
 $ git status
 On branch master
 
@@ -159,7 +155,6 @@ $ git log -1
 #### 예시
 
 ```bash
-User@DESKTOP-THOHAFO MINGW64 ~/Desktop/test (master)
 $ git log
 fatal: your current branch 'master' does not have any commits yet
 # 아직 커밋 기록이 없는 상태
