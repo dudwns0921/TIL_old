@@ -10,7 +10,7 @@
 
   
 
-## Git 저장소 만들기
+## 1. Git 저장소 만들기
 
 ```bash
 User@DESKTOP-THOHAFO MINGW64 ~/Desktop/test
@@ -25,7 +25,7 @@ $
 
 
 
-## 버전 만들기
+## 2. 버전 만들기
 
 버전을 만드는 작업을 큰 흐름으로 보자면
 
@@ -96,7 +96,7 @@ $ git commit -m "First Commit"
 
 
 
-## 상태관련 명령어
+## 3. 상태관련 명령어
 
 ### status
 
