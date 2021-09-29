@@ -1,4 +1,4 @@
 # JAVA
 
-- ## [JAVA_collection framework](./JAVA_collection framework.md)
+- ## [JAVA_Collection_Framework](./JAVA_Collection_Framework.md)
 
