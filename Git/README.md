@@ -8,5 +8,4 @@
 
 - ## [멀티캠퍼스 GIt 특강 2일차 Undoing](./Undoing.md)(작성중...)
 
-- ## [멀티캠퍼스 Git 특강 2일차 Reset, Revert](./Reset_Revert)(작성중...)
 

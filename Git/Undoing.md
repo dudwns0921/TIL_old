@@ -66,7 +66,7 @@
 
   reset을 이해하기 위해서는 먼저 아래의 그림을 이해해야 한다.
 
-  ​	![git_undoing_1](C:\Users\User\Desktop\TIL\Git\md-images\git_undoing_1-16330963144723.PNG)
+  ![git_undoing_1](.\md-images\git_undoing_1.PNG)	
 
 여기서 HEAD는 현재 브랜치의 마지막 커밋의 스냅샷이다. Index는 바로 다음에 커밋할 것들로 Staging Area라고도 한다. 마지막으로 Working Directory는 말 그대로 우리의 작업 공간이다.
 
@@ -80,17 +80,17 @@
 
 - #### reset --soft
 
-  ![git_undoing_2](C:\Users\User\Desktop\TIL\Git\md-images\git_undoing_2-16330963398494.PNG)	
+  ![git_undoing_2](.\md-images\git_undoing_2.PNG)	
 
 - #### reset --mixed
 
-  ![git_undoing_3](C:\Users\User\Desktop\TIL\Git\md-images\git_undoing_3-16330963594375.PNG)	
+  ![git_undoing_3](.\md-images\git_undoing_3.PNG)	
 
   --mixed는 -soft와 마찬가지로 가장 최근의 커밋을 가리킨다. 그러고 나서 Staging Area를 비우기까지 한다. git commit 명령도 되돌리고  git add 명령까지 되돌리는 것이다.
 
 - #### reset --hard
 
-  ![git_undoing_4](C:\Users\User\Desktop\TIL\Git\md-images\git_undoing_4-16330963682066.PNG)	
+  ![git_undoing_4](.\md-images\git_undoing_4.PNG)	
 
 - ### revert
 
