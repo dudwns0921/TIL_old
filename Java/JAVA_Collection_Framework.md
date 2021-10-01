@@ -26,7 +26,7 @@
   이를 구현한 클래스로는 *ArrayList*, *Vector*, *LinkedList*가 있다.
 
   ```java
-  List<String> list = new ArrayList<String>;
+  ArrayList<String> list = new ArrayList<String>;
   
   // 여기서 <>는 제네릭을 사용한 것으로 제네릭은 클래스나 메소드에서 사용할 내부 데이터 타입을 컴파일 시에 미리 저장하는 방법이다.
   // 다시 말하면 여기서는 ArrayList 클래스에 String인 데이터만 넣겠다는 의미로 볼 수 있다.
