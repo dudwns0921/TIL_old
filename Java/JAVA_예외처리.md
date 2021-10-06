@@ -19,6 +19,8 @@
 
 RuntimeException 아래에 있는 클래스들이 실행예외 클래스들이다.
 
+
+
 ## 1. 실행 예외
 
 - ### NullPointerException
@@ -113,7 +115,7 @@ try{ // ArrayIndexOutOfboundsException 또는 NullPointerException 발생
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-        // 에러의 발생근원지를 찾아 단계별로 에러를 출력
+        // e.printStackTrace() : 에러의 발생근원지를 찾아 단계별로 에러를 출력
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

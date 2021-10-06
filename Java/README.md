@@ -4,7 +4,7 @@
 
 - ## [JAVA 객체 프로그래밍](./JAVA_객체_프로그래밍.md)
 
-- ## [JAVA 예외처리](./JAVA_예외처리)
+- ## [JAVA 예외처리](./JAVA_예외처리.md)
 
-- ## [JAVA Database](./JAVA_Database.md)
+- ## [JAVA JDBC 연결](./JAVA_JDBC_연결.md)
 
