@@ -99,6 +99,12 @@
 
 - `*script*, _script_` *이탤릭체*, _기울임_
 
+- <span style="color:red">빨간 글씨</span>, `<span style="color:red">빨간 글씨</span>`
+
+  마크다운 문법이라기보다는 html 태그를 사용한 것임을 알아두자. 
+  
+  color의 값은 RGB값을 사용해도 된다.
+  
   
 
 ## 10. 수평선
