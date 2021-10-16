@@ -63,27 +63,118 @@ static은 기본값이기 때문에 따로 속성값을 선언하지 않아도 �
 
 
 
-position fixed
+## Fixed 
 
-body를 엄청 크게 하고 스크롤을 내려보면 화면 상단에 고정되어있는 걸 확인
+말 그대로 HTML 요소를 고정시키기 위해 사용하는 속성값이다.
 
-고정되는 위치는 초기에 위치한 곳
+속성값으로 fixed를 주면 요소가 원래 생성되었던 곳에 고정된다.
 
-position fixed를 이용하면 스크롤해도 항상 제자리에 머무른다.
-처음 만들어진 자리에 고정 되어있다. 하지만 top, left, right, bottom 중 하나만 수정해도 서로 다른 레이어에 위치하게되어 원래 위치가 무시된다.
-positon fixed를 이용하면 가장 위에 위치하게 된다. (맨 앞)
+이 때 fixed된 요소는 새로운 레이어로 이동하게 되어 다른 요소들의 영향을 받지 않게 된다.
+
+하지만 top, left, right, bottom 속성값을 바꿔서 원래 위치를 변경할 수 있다.
+
+![fixed](./md-images/fixed.jpg)	
+
+파란색 박스가 빨간색 박스 아래 위치에 고정된 걸 볼 수 있다.
+
+여기서 body 요소의 height 값을 엄청 크게 설정하고 스크롤을 아무리 내려도 파란색 박스의 위치는 그대로인 것을 확인할 수 있을 것이다.
 
 
 
+그리고 새로운 레이어에 있기 때문에 초록색 박스는 파란색 박스의 영향을 받지 않아 빨간색 박스 바로 밑에 오게 되었고, 
+
+파란색 박스는 초록색 박스를 덮어버린 것이다.
+
+```html
+        .blue {
+            background-color: blue;
+            position: fixed;
+            width: 120px;
+            height: 80px;
+        }
+
+<!--fixed된 걸 좀 더 잘 보기 위해서 파란색 박스의 크기를 수정했다.-->
+```
 
 
-static
 
-\1. position: static (default) - 박스를 처음 위치한 곳에 두는 것
+## Relative
 
-top 등등 속성이 아무런 의미가 없음
+HTML 요소가 처음 위치한 곳을 기준으로 주어진 top, left, right, bottom 속성값에 따라 이동시킨다.
 
-\2. position: fixed - 처음에 위치한 자리에서 화면의 스크롤에 상관없이 고정되는 것, top,bottom, left, right 속성을 줘서 고정된 위치 이동시킬 수 있음. 단 이동이 되면 가장 위의 새 레이어에 놓이게됨
-\3. position : relative - 박스가 처음 위치한 곳을 기준으로 이동,
-top,bottom, left, right 속성을 주면 첫 위치를 기준으로 이동됨
-\4. position : absolute - 가장 가까운 부모 엘리먼트에 position:relative를 추가한다면, 그 부모 기준으로 top,bottom,left,right이동하고/ 아닐시엔 body 기준으로 이동된다
+![relative](./md-images/relative.jpg)	
+
+```html
+        .blue {
+            background-color: blue;
+            position: relative;
+            left: 100px;
+        }
+```
+
+
+
+파란색 박스의 원래 위치에서 왼쪽으로 100px 만큼 이동했다.
+
+
+
+## Absolute
+
+처음에 가장 이해하기 힘들었던 속성값이다.
+
+position 속성값이 relative인 부모 요소를 기준으로 주어진 top, left, right, bottom 속성값에 따라 이동시킨다.
+
+하지만 속성값이 relative인 부모 요소가 없다면 가장 마지막 부모 요소인 body를 기준으로 이동하게 된다.
+
+![absolute](./md-images/absolute-16342537143391.jpg)	
+
+현재 파란색 박스에 absolute 속성값을 주고 세 박스 요소를 둘러싼 parent 박스에 relative 속성값을 추가한 상태이다.
+
+bottom의 속성값으로 20px을 선언했더니 parent 박스를 기준으로 밑에서 20px 올라온 걸 확인할 수 있다.
+
+속성값을 absolute로 주게 되면 fixed와 마찬가지로 새로운 레이어로 이동하기 때문에 다른 요소들에 영향을 받지 않는다.
+
+위의 예시에서도 초록색 박스를 덮어버린 것을 확인할 수 있다.	
+
+```html
+    <style>
+...
+        .parent {
+            width: 300px;
+            height: 300px;
+            border: 10px solid black;
+            position: relative;
+
+        }
+...
+        .blue {
+            background-color: blue;
+            position: absolute;
+            bottom: 20px;
+        }
+...
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="red"></div>
+        <div class="blue"></div>
+        <div class="green"></div>
+    </div>
+</body>
+```
+
+![absolute2](./md-images/absolute2.jpg)	
+
+이번에는 부모 요소에 relative 속성값이 추가되지 않아 body를 기준으로 움직이게 된 것이다.
+
+```html
+        .parent {
+            width: 300px;
+            height: 300px;
+            border: 10px solid black;
+
+        }
+
+<!-- relative 속성값만 제거해주었다. -->
+```
