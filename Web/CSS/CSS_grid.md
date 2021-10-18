@@ -1,547 +1,410 @@
 # CSS GRID
 
-grid도 flexbox와 마찬가지로 부모 요소에서 적용된다.
+## grid란?
 
-display: grid 라고 설정하면 됨
+CSS grid layout은 flexbox와 마찬가지로 뷰포트나 요소의 크기가 불명확하거나 동적으로 변할 때에도 효율적으로 요소를 배치, 정렬, 분산할 수 있는 방법을 제공하는 CSS의 레이아웃 방식이다.
 
-flexbox랑 거의 비슷
+차이점이 있다면 flexbox는 한 방향 레이아웃 시스템이고, grid는 두 방향 레이아웃 시스템이라는 것이다. 
 
-부모 요소에서 작업하게 됨
 
-grid-template-colums column을 생성하고 px로 그 column의 너비를 설정
 
-row는 가로, row의 height 높이를 px로 설정
+## grid 구성
 
-설정한 크기 개수에 따라 column 수가 결정됨
+### grid container & grid item
 
-column-gap으로 세로 간격 조정 가능
+grid는 복수의 자식 요소인 grid item과 그 상위 부모 요소인 grid container로 구성된다.
 
-row-gap으로 가로 간격 조정 가능
+grid는 부모 요소에 display: grid 속성을 선언하는 것을 통해 만들 수 있다.
 
 
 
-CSS grid가 가진 함수
+### grid 라인
 
-repeat로 모든 칼럼과 로우의 길이를 나열할 필요없이 한 번만 작성해주면 된다.
+그리드를 구성하는 분할 선이다. 수직(열 그리드 라인)과 수평(행 그리드 라인)으로 만들 수 있으며 행 또는 열의 양옆에 위치할 수 있다. 
 
-ex) repeat(4, 200px)
+<img src="./md-images/terms-grid-line.svg" alt="terms-grid-line" style="width:30vh;" />	
 
+### grid 트랙
 
+두 개의 그리드 라인 사이의 공간으로, 그리드의 열 또는 행으로 볼 수 있다.
 
-grid template areas
+<img src="./md-images/terms-grid-track.svg" style="width:30vh;" />	
 
-각 요소의 grid-area에 있는 값과 
+### grid 셀
 
-gird template areas에 적는 값이 같아야 한다.
+두 행과 열의 그리드 라인 사이의 공간이다. 그리드의 구성 단위가 된다. 
 
-클래스 이름과는 상관없음
+<img src="./md-images/terms-grid-cell.svg" style="width:30vh;" />	
 
-grid area의 값은 String이 아니어야 한다.
+### grid 영역
 
-변수처럼 ""이 없음
+네 개의 그리드 라인으로 둘러싸인 공간이다. 몇 개의 그리드 셀로 구성된다. 
 
+<img src="./md-images/terms-grid-area.svg" style="width:30vh;" />	
 
+## grid 속성
 
-grid-column start
+grid의 속성은 flexbox와 마찬가지로 container에 적용하는 속성과 item에 적용하는 속성으로 나뉜다.
 
-grid-column end
+| grid container        | grid item         |
+| --------------------- | ----------------- |
+| grid-template-columns | grid-column-start |
+| grid-template-rows    | grid-column-end   |
+| grid-template-areas   | grid-row-start    |
+| grid-template         | grid-row-end      |
+| grid-column-gap       | grid-column       |
+| grid-row-gap          | grid-row          |
+| grid-gap              | grid-area         |
+| justify-items         | justify-self      |
+| align-items           | align-self        |
+| justify-content       | place-self        |
+| align-content         |                   |
+| place-content         |                   |
+| grid-auto-columns     |                   |
+| grid-auto-rows        |                   |
+| grid-auto-flow        |                   |
+| grid                  |                   |
 
-줄을 기준으로 한다
 
-그래서 1번부터 2번까지해도 달라지는 건없다
 
-1번부터 3번으로 하면 맨 처음에 생각했던 결과가 나온다.
+### grid-template-columns / rows
 
- area를 전부다 작성하는 것보다는 편한 방법
+grid 트랙의 크기들을 지정해주는 속성이다.
 
+여러가지 단위를 사용할 수 있고, 섞어서도 사용 가능하다.
 
 
-  grid-column-start: 1;
 
-  grid-column-end: 5;
+grid-template-columns은 column방향, 즉 세로 방향에서 봤을 때의 길이를 설정한다.
 
-=
+따라서 grid-template-columns은 트랙의 너비를 설정한다.
 
-grid-column: 1/5;
+이와 반대로 grid-template-rows는 트랙의 높이를 설정한다.
 
-더 간결하게 작성하는 방법
 
 
+```css
+.container {
+	grid-template-columns: 200px 200px 500px;
+	}
+```
 
-1부터 시작해서 5에서 끝난다고 하는 것보다는
+위의 예시는 그리드를 3개의 열로 나누고 그 길이를 각각 200px, 200px, 500px로 나눈다는 의미이다.
 
-시작부터 끝이라고 작성하는 게 더 간편
 
--1이 끝의 의미를 가지고 있음
 
-grid-column: 1/-1;
+### fraction
 
--2,-3
+```css
+.container {
+	grid-template-columns: 1fr 1fr 1fr;
+	}
+```
 
-끝에서부터 한 칸씩 전진
+fraction은 조각을 의미한다.
 
+위의 예시는 세로 방향의 길이, 트랙의 너비를 총 3개의 조각으로 나누고, 각각의 비율을 1:1:1로 설정한 것이다.
 
+이 때 grid의 너비가 설정되어 있다면 그 너비를 조각의 숫자대로 나눈다.
 
-span 속성값
+너비가 설정되어 있지 않다면 body의 너비를 조각으로 나눈다.
 
-몇 칸의 cell을 차지하는지 작성
+이와 달리 row, 트랙의 높이를 설정하려면 꼭 height를 설정해야 한다.
 
-이경우에는 4개
 
-수직, 수평 모두 작용
 
 
 
-섞어서도 사용가능
+### auto-fill, auto-fit
 
-가령 grid/column: 1/span2;
+auto-fill과 auto-fit은 column의 개수를 미리 정하지 않고 설정된 너비가 허용하는 한 최대한 셀을 채운다.
 
-첫 번째 줄에서 시작해서 두 칸 차지
+![grid_ex7](./md-images/grid_ex9.jpg)	
 
+```css
+.container {
+	grid-template-columns: repeat(auto-fill, minmax(20%, auto));   
+}
+```
 
+![grid_ex8](./md-images/grid_ex8.jpg)	
 
-라인 네이밍
+```css
+.container {
+	grid-template-columns: repeat(auto-fit, minmax(20%, auto));   
+}
+```
 
-grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px;
+둘의 차이점은 그리드 컨테이너가 하나의 트랙에 모든 item을 수용하고 남는 공간이 있을 때 발생한다.
 
-  grid-template-rows: repeat(4, 100px [sexy-line]);
+현재 minmax 함수를 통해 너비의 최솟값을 20%으로 설정했기 때문에 row 하나에 5개의 item가 들어올 수 있다.
 
-모두 같은 라인으로 이름 붙일 경우에는 뒤의 숫자로 구분
+4개의 item이 들어왔을 때 auto-fill은 남는 공간을 그대로 유지한다.
 
-이건 결국 숫자로 구분하는 거랑 큰 차이가 없는듯
+auto-fit은 남는 공간을 채운다.
 
 
 
-fraction
+### max-content
 
-사용가능한 공간을 의미
+grid item이 포함하는 내용의 최대 크기를 의미한다.
 
-그리드 상에서의 공간을 뜻한다
+여기서 최대 크기란 모든 내용이 한 줄로 표현될 수 있는 크기이다.
 
-grid-template-columns: repeat(4, 1fr);
+![max-content](./md-images/max-content.jpg)	
 
-이렇게 하면 설정된 그리드의 너비를 4공간으로 나눈다는 의미
+```css
+.container {
+    display: grid;
+	grid-template-columns: max-content 1fr 1fr;
+}
+```
 
-너비를 설정하지 않으면 바디의 넓이를 따라간다.
 
-grid-template-columns: 4fr 1fr 1fr 1fr;
 
-이런 식으로 나누면 비율로 적용되어 첫 번째 칸이 나머지 칸들보다 4배의 공간을 더 갖게 됨
+### min-content
 
-하지만 row를 설정하려면 그 전에 꼭 height를 설정해야 한다.
+반대로 grid item이 포함하는 내용의 최소 크기를 의미한다.
 
+![min-content](./md-images/min-content.jpg)	
 
+```css
+.container {
+    display: grid;
+	grid-template-columns: min-content 1fr 1fr;
+}
+```
 
-다른 방법보다 fr을 사용하는 걸 추천!
 
 
+### repeat()
 
-grid-template
+만약 그리드를 통해 트랙을 나눌 때, 그 수가 100개가 넘어간다면 하나하나 길이를 지정하기는 어려울 것이다.
 
-슈퍼 지름길
+```css
+.container {
+	grid-template-columns: repeat(100,100px);
+	/* grid-template-columns: 100px 100px 100px...;(총 100개) 와 같은 코드이다. */
+	}
+	
+```
 
-지름길 중 가장 위
+repeat 함수로 간단하게 작성할 수 있다.
 
-  grid-template:
 
-  "header header header header" 1fr
 
-  "content content content nav" 2fr
+### minmax()
 
-  "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr;
+최솟값과 최댓값을 지정할 수 있는 함수이다.
 
+```
+.container {
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, minmax(100px, auto));
+}
+```
 
+minmax(100px, auto)의 의미는 최소한 100px, 최대는 자동으로(auto) 늘어나게.. 이다.
 
-뒤의 길이는 높이 먼저
+즉 아무리 내용의 양이 적더라도 최소한 높이 100px은 확보하고, 내용이 많아 100px이 넘어가면 알아서 늘어나도록 처리한 것이다.
+
+
+
+### grid-column-gap / grid-row-gap
+
+이 속성으로 트랙 사이의 간격을 조정할 수 있다.
+
+
+
+### grid-template-areas
+
+각 요소에 이름을 붙이고, 그 이름을 이용해서 배치하는 방법이다.
+
+```css
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "content content nav"
+        "footer footer footer";
+    column-gap: 5px;
+    row-gap: 5px;
+    
+}
+
+.header{
+    font-size: 50px;
+    grid-area: header;
+    background-color: #C9C9C9;
+}
+...
+```
+
+각 요소마다 grid-template-areas에서 사용할 이름을 grid-area의 속성값으로 선언해야 한다.
+
+![grid_ex](./md-images/grid_ex.jpg)	
+
+
+
+### grid-column,
+
+### grid-row-start / end,
+
+### grid-row
+
+grid item에 적용하는 속성으로 각 셀의 영역을 지정한다.
+
+이 때의 속성값은 grid 라인을 기준으로 한다.
+
+```css
+.item {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row: 1/2;
+    /* grid-row-start: 1;
+       grid-row-end: 2; 와 같다. */
+}
+```
+
+![grid_ex2](C:\Users\User\Desktop\TIL\Web\CSS\md-images\grid_ex2.jpg)	
+
+
+
+### span
+
+라인값 대신에 span이라는 값을 사용할  수도 있다.
+
+cell을 기준으로 해서 몇 칸을 차지하는지 나타낸다.
+
+```css
+.item{
+    font-size: 50px;
+    background-color: #C9C9C9;
+    grid-column: span 2;
+    grid-row: span 1;
+}
+/* 위에 grid-column과 grid-row로 작성한 예시와 같은 결과 */
+```
+
+
+
+### grid-template
+
+위에서 살펴본 grid-template-colums / rows, areas을 합친 속성이다.
+
+```css
+.container {
+    display: grid;
+    grid-template:
+        "header header header" 1fr
+        "content content nav" 1fr
+        "footer footer footer" 1fr / 1fr 1fr 1fr;
+    column-gap: 5px;
+    row-gap: 5px;
+    
+}
+
+.header{
+    grid-area:header;
+    background-color: #c9c9c9;
+}
+...
+/* grid-template-areas 예시와 같은 결과 */
+```
+
+area 뒤에 각각의 row, 트랙의 높이를 설정
+
+마지막 슬래쉬 뒤에다가 column, 트랙의 너비를 설정
 
 grid 템플릿에서는 repeat 함수가 적용되지 않는다.
 
-어떻게 만들든 화면의 비율이 같다
 
-라인 네이밍도 적용 가능
 
+### justify-items,
 
+### align-items,
 
-마지막에 슬래쉬 이후 각각의 column의 너비를 설정한다.
+### place-items
 
+grid item들을 세로 방향(align-items), 가로 방향(justify-items) 으로 정렬한다.
 
+place-items는 두 방향의 정렬을 한 번에 설정할 수 있고, 작성 순서는 세로, 가로 순이다.
 
-● justify-items
-● align-items
-● place-items: (수직) (수평);
 
-▷ stretch : grid를 늘려서 grid를 채우게 한다.
-▷ start : item을 cell 시작에 배치한다.
-▷ center : item을 cell 중앙에 배치한다.
-▷ end : item을 cell 끝에 배치한다.
 
+### align-self,
 
+### justify-self,
 
-[place items – justify-items, align-items]
-\- Justify-items와 align-items로 그리드 내부에 아이템이 얼만큼 채워질지 제어할 수 있다.
-\- 기본 값은 stretch로 그리드를 꽉 채우는 것으로 한다.
-\- Place-items를 쓰면 justify-items와 align-items를 통합
- Place-items: stretch center; /*첫번째가 수직, 두번째가 수평*/
+### place-self
 
+위에서 살펴본 justify-items, ... 속성과 같다.
 
+하지만 뒤에 self를 붙임으로써 grid item 전체가 아닌 속성이 선언된 그 하나의 item만 정렬시킬 수 있다.
 
-● align-self
-● justify-self
-● place-self: (수직) (수평);
-▷ child에만 적용돠는 property이다.
 
 
+### grid-auto-flow
 
-emmet abbrevation
+flexbox에서 사용했던 flex-direction 속성과 같다.
 
-.item*20>{$}
+grid item들이 자동 배치되는 흐름을 결정하는 속성이다.
 
-20개의 item이라는 클래스를 가지는 div를 만들고 그 안을 연속되는 숫자로 채움
+![gride_ex6](./md-images/gride_ex6.jpg)	
 
+grid-auto-flow의 속성값이 row일 때의 모습
 
+row는 기본값으로 명시적으로 선언하지 않아도 된다.
 
-설정한 그리드보다 더 많은 요소를 가져오게 될 수도 있다.
+![grid_ex5](./md-images/grid_ex5.jpg)	
 
-그렇게 되면 설정된 row가 없기 때문에 그리드는 알아서 새로운 row들을 만든다. 이 때 설정된 값이 없으므로 요소들의 내용만큼의 크기로 생성됨
+grid-auto-flow의 속성값이 column일 때의 모습
 
 
 
-그래서 사용하는 것이 아래
+### grid-auto-rows / columns
 
-더많은 콘텐츠가 있으면 우리가 row를 지정해주지 않아도 자동으로  생성
+grid-template-rows의 통제를 벗어난 위치에 있는 트랙의 크기를 지정하는 속성
 
-초과하는 콘텐츠에 대해서 적용됨
+```css
+.container {
+	...
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    }
+```
 
-만약 row를 정의하지 않는다면 모든  row에 적용됨
+![grid_ex3](./md-images/grid_ex3.jpg)	
 
-얼마나 많은 요소들을 갖는지 상관없을 때
+grid-auto-row 속성이 선언되지 않은 상태이다.
 
+통제를 벗어난 grid item들은 설정된 크기가 없기 때문에 item안의 내용만큼의 크기를 갖는다.
 
+```css
+.container {
+	...
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    }
+```
 
-● grid-auto-rows: (크기);
-▷ 만들어놓은 row보다 더 많은 content가 있으면, 자동으로 row를 만들어라.
+![grid_ex4](./md-images/grid_ex4.jpg)	
 
-● grid-auto-flow: (방향); [기본값: row]
-▷ flex-direction과 비슷하다.
-▷ row가 끝날 때 새로운 row를 만들지, 새로운 column을 만들지 결정한다.
+grid-auto-rows의 값을 1fr로 선언했다.
 
-● grid-auto-columns: (크기);
-▷ grid-auto-flow: column;일때 작동한다.
+통제를 벗어난 요소들이 있다면 그 크기를 1fr로 하라는 의미이다.
 
 
 
-[minmax]
-\- Grid-template-columns: repeat(10, minmax(100px, 1fr)); //최대 1fr로 하되 최소 100px너비
+grid-auto-columns을 사용하고 싶다면 먼저 grid-auto-flow의 속성값을 column으로 선언해야 한다.
 
-요소가 가능한한 가장 크기를 바라지만 동시에 엄청 작게 되지 않기를 바랄 때 사용 가능.
 
 
+# :books:참고자료
 
-auto-fill은 화면상에서 가능한한 많은 column을 갖게 해줌
+https://studiomeal.com/archives/533
 
-column이 비게 되더라도
+https://webactually.com/2019/06/05/%ea%b7%b8%eb%a6%ac%eb%93%9c-%ec%99%84%eb%b2%bd-%ea%b0%80%ec%9d%b4%eb%93%9c/#a2
 
-auto-fit
-
-현재 요소들이 빈 공간없이 채워지는 것
-
-
-
-새로운 요소가 추가됐을 때
-
-auto fill은
-
-column중 빈 공간을 요소에게 줌
-
-더 정확 
-
-auto fit은 row안에 맞추기 위해 다른 요소들의 크기가 조금 줄어들게 됨
-
-더 유동적
-
-
-
-[auto-fill, auto-fit]
-\- Grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); //창 너비가 늘어나면 빈 column들로 row를 채움
-\- Grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); // 창 너비가 늘어나면 element를 늘려서 row에 맞게 해줌
-
-● max-content
-▷ content의 크기만큼 cell의 크기를 늘린다.
-● min-content
-▷ content의 크기를 최대한 줄여 cell의 크기를 줄인다.
-
-※ 어떻게 content가 보여야 하는지 디자인하는 것이다.
-※ repeat(), minmax와 결합하여 반응형 디자인을 만들 수 있다.CSS GRID
-
-grid도 flexbox와 마찬가지로 부모 요소에서 적용된다.
-
-display: grid 라고 설정하면 됨
-
-flexbox랑 거의 비슷
-
-부모 요소에서 작업하게 됨
-
-grid-template-colums column을 생성하고 px로 그 column의 너비를 설정
-
-row는 가로, row의 height 높이를 px로 설정
-
-설정한 크기 개수에 따라 column 수가 결정됨
-
-column-gap으로 세로 간격 조정 가능
-
-row-gap으로 가로 간격 조정 가능
-
-
-
-CSS grid가 가진 함수
-
-repeat로 모든 칼럼과 로우의 길이를 나열할 필요없이 한 번만 작성해주면 된다.
-
-ex) repeat(4, 200px)
-
-
-
-grid template areas
-
-각 요소의 grid-area에 있는 값과 
-
-gird template areas에 적는 값이 같아야 한다.
-
-클래스 이름과는 상관없음
-
-grid area의 값은 String이 아니어야 한다.
-
-변수처럼 ""이 없음
-
-
-
-grid-column start
-
-grid-column end
-
-줄을 기준으로 한다
-
-그래서 1번부터 2번까지해도 달라지는 건없다
-
-1번부터 3번으로 하면 맨 처음에 생각했던 결과가 나온다.
-
- area를 전부다 작성하는 것보다는 편한 방법
-
-
-
-  grid-column-start: 1;
-
-  grid-column-end: 5;
-
-=
-
-grid-column: 1/5;
-
-더 간결하게 작성하는 방법
-
-
-
-1부터 시작해서 5에서 끝난다고 하는 것보다는
-
-시작부터 끝이라고 작성하는 게 더 간편
-
--1이 끝의 의미를 가지고 있음
-
-grid-column: 1/-1;
-
--2,-3
-
-끝에서부터 한 칸씩 전진
-
-
-
-span 속성값
-
-몇 칸의 cell을 차지하는지 작성
-
-이경우에는 4개
-
-수직, 수평 모두 작용
-
-
-
-섞어서도 사용가능
-
-가령 grid/column: 1/span2;
-
-첫 번째 줄에서 시작해서 두 칸 차지
-
-
-
-라인 네이밍
-
-grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px;
-
-  grid-template-rows: repeat(4, 100px [sexy-line]);
-
-모두 같은 라인으로 이름 붙일 경우에는 뒤의 숫자로 구분
-
-이건 결국 숫자로 구분하는 거랑 큰 차이가 없는듯
-
-
-
-fraction
-
-사용가능한 공간을 의미
-
-그리드 상에서의 공간을 뜻한다
-
-grid-template-columns: repeat(4, 1fr);
-
-이렇게 하면 설정된 그리드의 너비를 4공간으로 나눈다는 의미
-
-너비를 설정하지 않으면 바디의 넓이를 따라간다.
-
-grid-template-columns: 4fr 1fr 1fr 1fr;
-
-이런 식으로 나누면 비율로 적용되어 첫 번째 칸이 나머지 칸들보다 4배의 공간을 더 갖게 됨
-
-하지만 row를 설정하려면 그 전에 꼭 height를 설정해야 한다.
-
-
-
-다른 방법보다 fr을 사용하는 걸 추천!
-
-
-
-grid-template
-
-슈퍼 지름길
-
-지름길 중 가장 위
-
-  grid-template:
-
-  "header header header header" 1fr
-
-  "content content content nav" 2fr
-
-  "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr;
-
-
-
-뒤의 길이는 높이 먼저
-
-grid 템플릿에서는 repeat 함수가 적용되지 않는다.
-
-어떻게 만들든 화면의 비율이 같다
-
-라인 네이밍도 적용 가능
-
-
-
-마지막에 슬래쉬 이후 각각의 column의 너비를 설정한다.
-
-
-
-● justify-items
-● align-items
-● place-items: (수직) (수평);
-
-▷ stretch : grid를 늘려서 grid를 채우게 한다.
-▷ start : item을 cell 시작에 배치한다.
-▷ center : item을 cell 중앙에 배치한다.
-▷ end : item을 cell 끝에 배치한다.
-
-
-
-[place items – justify-items, align-items]
-\- Justify-items와 align-items로 그리드 내부에 아이템이 얼만큼 채워질지 제어할 수 있다.
-\- 기본 값은 stretch로 그리드를 꽉 채우는 것으로 한다.
-\- Place-items를 쓰면 justify-items와 align-items를 통합
- Place-items: stretch center; /*첫번째가 수직, 두번째가 수평*/
-
-
-
-● align-self
-● justify-self
-● place-self: (수직) (수평);
-▷ child에만 적용돠는 property이다.
-
-
-
-emmet abbrevation
-
-.item*20>{$}
-
-20개의 item이라는 클래스를 가지는 div를 만들고 그 안을 연속되는 숫자로 채움
-
-
-
-설정한 그리드보다 더 많은 요소를 가져오게 될 수도 있다.
-
-그렇게 되면 설정된 row가 없기 때문에 그리드는 알아서 새로운 row들을 만든다. 이 때 설정된 값이 없으므로 요소들의 내용만큼의 크기로 생성됨
-
-
-
-그래서 사용하는 것이 아래
-
-더많은 콘텐츠가 있으면 우리가 row를 지정해주지 않아도 자동으로  생성
-
-초과하는 콘텐츠에 대해서 적용됨
-
-만약 row를 정의하지 않는다면 모든  row에 적용됨
-
-얼마나 많은 요소들을 갖는지 상관없을 때
-
-
-
-● grid-auto-rows: (크기);
-▷ 만들어놓은 row보다 더 많은 content가 있으면, 자동으로 row를 만들어라.
-
-● grid-auto-flow: (방향); [기본값: row]
-▷ flex-direction과 비슷하다.
-▷ row가 끝날 때 새로운 row를 만들지, 새로운 column을 만들지 결정한다.
-
-● grid-auto-columns: (크기);
-▷ grid-auto-flow: column;일때 작동한다.
-
-
-
-[minmax]
-\- Grid-template-columns: repeat(10, minmax(100px, 1fr)); //최대 1fr로 하되 최소 100px너비
-
-요소가 가능한한 가장 크기를 바라지만 동시에 엄청 작게 되지 않기를 바랄 때 사용 가능.
-
-
-
-auto-fill은 화면상에서 가능한한 많은 column을 갖게 해줌
-
-column이 비게 되더라도
-
-auto-fit
-
-현재 요소들이 빈 공간없이 채워지는 것
-
-
-
-새로운 요소가 추가됐을 때
-
-auto fill은
-
-column중 빈 공간을 요소에게 줌
-
-더 정확 
-
-auto fit은 row안에 맞추기 위해 다른 요소들의 크기가 조금 줄어들게 됨
-
-더 유동적
-
-
-
-[auto-fill, auto-fit]
-\- Grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); //창 너비가 늘어나면 빈 column들로 row를 채움
-\- Grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); // 창 너비가 늘어나면 element를 늘려서 row에 맞게 해줌
-
-● max-content
-▷ content의 크기만큼 cell의 크기를 늘린다.
-● min-content
-▷ content의 크기를 최대한 줄여 cell의 크기를 줄인다.
-
-※ 어떻게 content가 보여야 하는지 디자인하는 것이다.
-※ repeat(), minmax와 결합하여 반응형 디자인을 만들 수 있다.
+노마드코더 CSS MasterClass 수업 내용

@@ -2,17 +2,17 @@
 
 ## flexbox란?
 
-flexbox는 뷰포트나 요소의 크기가 불명확하거나 동적으로 변할 때에도 효율적으로 요소를 배치, 정렬, 분산할 수 있는 방법을 제공하는 CSS3의 레이아웃 방식
+flexbox는 뷰포트나 요소의 크기가 불명확하거나 동적으로 변할 때에도 효율적으로 요소를 배치, 정렬, 분산할 수 있는 방법을 제공하는 CSS의 레이아웃 방식
 
 flexbox의 장점을 한 마디로 표현하면 '복잡한 계산 없이 요소의 크기와 순서를 유연하게 배치할 수 있다'라고 할 수 있다. 
 
 
 
-## flexbox의 구성
+## flexbox 구성
 
 flexbox는 복수의 자식 요소인 flex item과 그 상위 부모 요소인 flex contatiner로 구성된다.
 
-flexbox는 정렬하려는 요소의 부모 요소에 display: flex 속성을 선언하는 것을 통해 만들 수 있다.
+flexbox는 부모 요소에 display: flex 속성을 선언하는 것을 통해 만들 수 있다.
 
 ![flexbox](./md-images/flexbox.png)	
 
