@@ -12,7 +12,5 @@
 
 - ## [JAVA 입출력](./JAVA_입출력.md)
 
-- ## [JAVA_JSP](./JAVA_JSP.md)
-
 - ## [JAVA 추상클래스&인터페이스](./JAVA_추상클래스&인터페이스.md)
 

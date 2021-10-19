@@ -46,4 +46,4 @@ ex) Chrome, Firefox, Microsoft Edge 등등
 
 # 참고자료
 
-- 윤인성, HTML5 웹 프로그래밍 입문, 한빛아카데미, 2019
+윤인성, HTML5 웹 프로그래밍 입문, 한빛아카데미, 2019
