@@ -72,7 +72,7 @@
 - 사용자에게 화면 디자인 같은 고정된 정보만 제공
 - 정보 수정 시 관리자가 직접 HTML 소스를 수정해서 사용자에게 제공
 
-![mermaid-diagram-20211020151719](C:\Users\User\Desktop\TIL\Web\md-images\mermaid-diagram-20211020151719.png)
+![mermaid-diagram-20211020151719](./md-images/mermaid-diagram-20211020151719.png)
 
 두 번째 특징에서 정적 웹 프로그래밍의 한계가 명확하게 드러난다.
 
@@ -84,7 +84,7 @@
 
 정적 웹 프로그래밍의 한계를 극복하기 위해 등장한 것이 동적 웹 프로그래밍이다.
 
-![mermaid-diagram-20211020151830](C:\Users\User\Desktop\TIL\Web\md-images\mermaid-diagram-20211020151830.png)
+![mermaid-diagram-20211020151830](./md-images/mermaid-diagram-20211020151830.png)
 
 정적 웹 프로그래밍에서 관리자가 수행하던 역할을 동적 웹 프로그래밍에서는 웹 어플리케이션 서버가 대신한다.
 
