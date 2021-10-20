@@ -9,7 +9,7 @@ Web Server의 개념은 소프트웨어와 하드웨어로 구분된다.
   Web 서버가 설치되어 있는 컴퓨터
 
 2. 소프트웨어
-  웹 브라우저 클라이언트로부터 HTTP 요청을 받아 정적인 컨텐츠(.html .css 등)를 제공하는 컴퓨터 프로그램
+    웹 브라우저 클라이언트로부터 request(요청)을 받아 정적인 컨텐츠(.html .css 등)를 response(응답)하는 컴퓨터 프로그램
 
 ex) Apache, Nginx, IIS, WebtoB 등
 
@@ -17,7 +17,7 @@ ex) Apache, Nginx, IIS, WebtoB 등
 
 ## WAS(Web Application Server)
 
-클라이언트의 request(요청)을 받아 DB 조회나, 어떤 로직을 처리해야하는 **동적**인 컨텐츠를 response(응답)하는 서버.
+클라이언트의 request을 받아 DB 조회나, 어떤 로직을 처리해야하는 동적인 컨텐츠를 response하는 서버.
 
 ex) Tomcat, WebLogic, WebSphere, Jeus, JBoss 등
 
@@ -29,7 +29,9 @@ ex) Tomcat, WebLogic, WebSphere, Jeus, JBoss 등
 
 Web Server와 WAS는 각각 독립적으로 존재할 수 있다.
 
-대부분의 WAS는 정적인 컨텐츠를 제공해주고 있기 때문에, Web Server 없이 WAS 만 존재할 수 있다.
+WAS는 기본적으로 동적인 컨텐츠를 제공하는 것이 목적이다.
+
+하지만 대부분의 WAS에서 정적 컨텐츠 또한 제공해주고 있기 때문에, Web Server 없이 WAS 만 존재할 수 있다.
 
 즉, WAS는 Web Server를 포함하는 개념이라고 할 수 있다.
 
