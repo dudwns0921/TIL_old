@@ -89,7 +89,5 @@
 
 ## 참고자료
 
-###  https://jeong-pro.tistory.com/95 
-
-### [기본기를 쌓는 정아마추어 코딩블로그]
+https://jeong-pro.tistory.com/95 [기본기를 쌓는 정아마추어 코딩블로그]
 

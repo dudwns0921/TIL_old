@@ -19,12 +19,7 @@
 
 ## 서블릿 API 계층 구조와 기능
 
-```mermaid
-graph BT
-A(HttpServlet)-->B(GenericServlet)
-B-.->C(Servlet)
-B-.->D(ServletConfig)
-```
+![mermaid-diagram-20211020151934](./md-images/mermaid-diagram-20211020151934.png)
 
 
 
@@ -69,14 +64,9 @@ doGet()과 doPost()와 같이 do로 시작하는 메서드는 서블릿의 핵�
 
 다음은 이클립스에서 서블릿을 만들고 실행하는 과정이다.
 
-````mermaid
-```mermaid
-graph TB
-A(사용자 정의 서블릿 클래스 만들기)-->B(서블릿 생명주기 메서드 구현)
-B-->C(서블릿 매핑 작업)
-C-->D(웹 브라우저에서 서블릿 매핑 이름으로 요청하기)
-```
-````
+
+
+![mermaid-diagram-20211020152024](./md-images/mermaid-diagram-20211020152024.png)
 
 다른 과정들은 대부분 이클립스에서 거의 자동으로 처리가 가능하지만 서블릿 매핑 작업은 코드를 직접 쳐야 한다.
 

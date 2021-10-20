@@ -12,15 +12,7 @@
 
 ## 웹 애플리케이션의 디렉터리 구조
 
-```mermaid
-graph LR
-A(웹 어플리케이션 이름)-->B(WEB-INF)
-B-->C(classes)
-B-->D(lib)
-B-->E(web.xml)
-```
-
-
+![mermaid-diagram-20211020152108](C:\Users\User\Desktop\TIL\Web\md-images\mermaid-diagram-20211020152108.png)
 
 
 

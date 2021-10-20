@@ -6,14 +6,9 @@ JDBC는 자바에서 데이터베이스에 접속할 수 있도록 하는 자바
 
 # JDBC 연결
 
-```mermaid
-flowchart TB
-a(자바 어플리케이션)-->b(JDBC API)
-b(JDBC API)-->c1(JDBC 드라이버)
-b-->c2(JDBC 드라이버)
-c1-->d1(데이터베이스)
-c2-->d2(데이터베이스)
-```
+![mermaid-diagram-20211020151135](./md-images/mermaid-diagram-20211020151135.png)
+
+
 
 ## 1. JDBC 드라이버 로드
 
