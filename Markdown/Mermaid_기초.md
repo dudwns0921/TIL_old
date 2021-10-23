@@ -207,7 +207,7 @@ flowchart LR
    A ==> B
 ```
 
-![mermaid-diagram-20211020154516](C:\Users\User\Desktop\TIL\Markdown\md-images\mermaid-diagram-20211020154516.png)
+![mermaid-diagram-20211020154516](./md-images/mermaid-diagram-20211020154516.png)
 
 ### Chaining of links
 
