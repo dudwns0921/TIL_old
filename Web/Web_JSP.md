@@ -198,11 +198,12 @@ JSP 등장배경을 설명하며 디자이너들이 HTML 태그에 자바 코드
 
 # :books:참고자료
 
-https://gmlwjd9405.github.io/2018/11/03/jsp.html
+- https://gmlwjd9405.github.io/2018/11/03/jsp.html
 
-https://www.tutorialspoint.com/jsp/index.htm
+- https://www.tutorialspoint.com/jsp/index.htm
 
-https://programming119.tistory.com/194
+- https://programming119.tistory.com/194
 
-이병승, 자바 웹을 다루는 기술, 도서출판 길벗, 2019
+- 이병승, 자바 웹을 다루는 기술, 도서출판 길벗, 2019
+
 
