@@ -75,8 +75,6 @@ redirect, refresh, location 방법은 서블릿이 웹 브라우저를 거쳐 �
 
 
 
-
-
 ### GET
 
 GET 방식을 사용할 때는 **쿼리스트링**을 사용한다.
