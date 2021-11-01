@@ -23,7 +23,7 @@ flowchart LR or graph LR
 	left-->right
 ```
 
-![mermaid-diagram-20211020152619](C:\Users\User\Desktop\TIL\Markdown\md-images\mermaid-diagram-20211020152619.png)
+![mermaid-diagram-20211020152619](./md-images/mermaid-diagram-20211020152619.png)
 
 위의 예시가 가장 기본적인 형태이다.
 
