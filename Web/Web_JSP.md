@@ -97,8 +97,6 @@ hello 태그를 사용하려면 다음과 같이 코드를 작성하면 된다.
 </html>
 ```
 
-uri의 속성값으로는 컨테이너가 인식할 수 있는 라이브러리의 위치를 작성하고, p
-
 
 
 ### :bulb:URI(Uniform Resource Identifier)과 URL(Uniform Resource Locator)

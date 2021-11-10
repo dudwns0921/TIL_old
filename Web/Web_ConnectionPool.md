@@ -53,10 +53,10 @@ public class ConnectionManager {
 
 
 
-1. 톰캣 컨테이너를 실행한 후 응용 프로그램을 실행한다.
+1. 톰캣 컨테이너를 실행한 후 웹 애플리케이션을 실행한다.
 2. 톰캣 컨테이너 실행 시 커넥션풀 객체를 생성한다.
 3. 생성된 커넥션 객체는 DBMS와 연결한다.
-4. 데이터베이스와의 연동 작업이 필요할 경우 응용 프로그램은 커넥션풀에서 제공하는 메서드를 호출하여 연동한다.
+4. 데이터베이스와의 연동 작업이 필요할 경우 웹 애플리케이션은 커넥션풀에서 제공하는 메서드를 호출하여 연동한다.
 
 
 
@@ -106,8 +106,6 @@ WEB-INF 폴더는 웹 애플리케이션에 관한 정보들이 저장되는 곳
 
 context.xml 파일에서 `<context>`태그 안에다가 데이터베이스 정보를 작성해준다.
 
-![2조_정영준 2021-10-22 14-06-31-196](./md-images/2조_정영준 2021-10-22 14-06-31-196.jpg)	
-
 | 속성            | 설명                                                         |
 | --------------- | ------------------------------------------------------------ |
 | name            | DataSource에 대한 JNDI 이름, 이후에 이 이름으로 DataSource에 접근한다. |
@@ -144,7 +142,7 @@ context.xml 파일에서 `<context>`태그 안에다가 데이터베이스 정�
 			initCtx = new InitialContext();
 			Context envCtx = (Context)initCtx.lookup("java:comp/env");
             // JNDI에 접근하기 위해 기본 경로를 지정한다.
-			DataSource ds = (DataSource)envCtx.lookup("jdbc/memberDB");
+			DataSource ds = (DataSource)envCtx.lookup("loginDB");
             // 톰캣 context.xml에서 설정한 name값을 이용해 미리 연결한 DataSource 객체를 받아온다.
 			con = ds.getConnection();
             // DataSource 클래스의 getConnection 메서드로 Connection 객체를 가져온다.
