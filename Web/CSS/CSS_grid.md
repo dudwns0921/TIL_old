@@ -290,7 +290,7 @@ cell을 기준으로 해서 몇 칸을 차지하는지 나타낸다.
 
 ### grid-template
 
-위에서 살펴본 grid-template-colums / rows, areas을 합친 속성이다.
+위에서 살펴본 grid-template-columns / rows, areas을 합친 속성이다.
 
 ```css
 .container {

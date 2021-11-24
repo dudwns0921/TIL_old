@@ -113,7 +113,7 @@ connect by  prior empno=mgr;
 | CONNECT_BY_ISLEAF        | 계층구조에서 최하위를 표시<br />1또는 0으로 표시되며 최하위일 경우 1, 즉 true로 표시된다. |
 | SYS_CONNECT_BY_PATH      | 계층구조의 전체 전개 경로를 표시. 가장 많이 사용하는 키워드  |
 | NOCYCLE                  | 순환구조 발생 지점까지만 전개된다.                           |
-| CONNECT_BT_ISCYCLE       | 순환구조 발생 지점을 표시                                    |
+| CONNECT_BY_ISCYCLE       | 순환구조 발생 지점을 표시                                    |
 
 
 
@@ -267,6 +267,22 @@ group by rollup(job, deptno);
 - grouping sets 함수는 group by에 나오는 칼럼의 순서와 관계없이 다양한 소계를 만들 수 있다.
 - group by문에 나오는 칼럼 순서에 상관없이 개별적으로 모두 처리한다.
 
+```sql
+select deptno, job, sum(sal) from emp
+group by GROUPING SETS (deptno, job);	
+	
+	CLERK	4150
+	SALESMAN	5600
+	PRESIDENT	5000
+	MANAGER	8275
+	ANALYST	6000
+30		9400
+20		10875
+10		8750
+```
+
+
+
 
 
 # 4-4. CUBE
@@ -275,7 +291,7 @@ group by rollup(job, deptno);
 
 ```SQL
 select job, deptno, sum(sal) from emp
-group by rollup(job, deptno);
+group by cube(job, deptno);
 
 --전체합계, 직업별 합계, 부서별 합계, 부서별 직업별 합계 모두가 출력된다. 
 ```
@@ -448,4 +464,3 @@ ex) 부서번호
 | Local Index        | 해당 파티션 별로 각자의 인덱스 사용       |
 | Prefixed Index     | 파티션 키와 인덱스 키가 동일              |
 | Non Prefixed Index | 파티션 키와 인덱스 키가 다름              |
-
