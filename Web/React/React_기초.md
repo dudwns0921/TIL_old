@@ -107,6 +107,8 @@ JSX 자바스크립트를 확장한 문법으로 HTML과 상당히 유사하다.
         onMouseEnter={()=>console.log("You entered title")}
         >I'm Title</h3>
     );
+    // react element를 만들 때에는 변수의 이름의 첫 문자를 꼭 대문자로 해야 한다.
+    // react element를 함수로 만들게 되면 원하는 만큼 사용할 수 있게 된다. 
     const Button = () => (
         <button
         style={{backgroundColor: "red",}}
@@ -124,10 +126,6 @@ JSX 자바스크립트를 확장한 문법으로 HTML과 상당히 유사하다.
 위의 예시를 JSX로 바꿔보았다.
 
 주의해야 할 점은 브라우저가 JSX를 완벽하게 이해하는 것이 아니기 때문에 babel이라는 컴파일러를 통한 변환 작업이 필요하다.
-
-
-
-
 
 
 
