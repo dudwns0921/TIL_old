@@ -4,7 +4,7 @@
 
 - ## [CSS](./CSS)
 
-- ## [React](./react)
+- ## [React](./React)
 
 - ## [Project](./Project)
 
