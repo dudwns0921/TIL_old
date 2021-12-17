@@ -32,6 +32,8 @@ class Welcome extends React.Component {
 
 react 관점에서 볼 때 위 두 가지 유형의 컴포넌트는 동일하다.
 
+
+
 ## :bulb:Tip!
 
 사용자 정의 컴포넌트의 이름은 항상 대문자로 시작해야 한다.

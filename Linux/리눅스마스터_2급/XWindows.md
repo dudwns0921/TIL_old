@@ -38,6 +38,8 @@ XView, Xaw, Motfi, Qt, GTK, KTK 등이 있음
 
 XFree86
 
+인텔 x86 계열의 유닉스 운영체계에서 동작하는 X 서버
+
 XF86Config
 
 
@@ -48,9 +50,17 @@ XF86Config
 
 KDE : KDE에서는 윈도우 매니저로 Kwin을 사용한다.
 
+
+
 GNOME : GNU에서 만든 공개형 데스크톱으로 소스 공개 자유 소프트웨어이다.
 
+데스크톱 부분과 라이브러리 부분은 LGPL, 응용 프로그램은 GPL 라이선스 정책을 따른다.
+
+
+
 LXDE, XFCE
+
+
 
 - 윈도우 매니저 : X 윈도우 상에서 윈도우의 배치와 표현을 담당하는 시스템 프로그램
 
@@ -92,7 +102,7 @@ GNOME : LGPL을 따르는 GTK+ 라이브러리 기반
 
 - X 윈도우 강제 종료(컨트롤 + 알트 + 백스페이스)
 - xinit에 전달하는 옵션 : '--'
-- 환경변수 display
+- 환경변수 display는 현재 X-윈도우 디스플레이 위치를 지정할 수 있다.
 
 형식 : export DISPLAY= "IP주소:디스플레이번호,스크린번호" (번호는 0부터 시작)
 
@@ -100,7 +110,7 @@ GNOME : LGPL을 따르는 GTK+ 라이브러리 기반
 
 # 1-5. KDE, GNOME, GRUB
 
-- 데스크톱 매니저 : KDE, GNOME, Xface
+- 데스크톱 환경 : KDE, GNOME, Xface
 - GNU 프로젝트 부트로더 : GRUB
 - Windows maker : GNOME과 KDE에 통합
 
@@ -110,9 +120,7 @@ GNOME : LGPL을 따르는 GTK+ 라이브러리 기반
 
 - GNOME : nautilus 파일 관리자로 사용
 - GNOME 2 : metacity 파일 관리자
-- GNOME 3 : Mutter 윈도우 매니저
-
-
+- GNOME 3 : M     
 
 # 1-7. 참고
 
@@ -140,6 +148,12 @@ GNOME : LGPL을 따르는 GTK+ 라이브러리 기반
 
 
 # 2-2. xauth
+
+X윈도우를 실행하면 $HOME/.Xauthority 파일이 생성됨
+
+이 파일은 키 값을 갖고 있는데 이 키 값을 가지고 X서버로 접근하면 해당 사용자로 인증하여 사용 가능하도록 한다.
+
+인증키를 설치하는 명령은 xauth add $DISPLAY이다.
 
 - MMC 방식의 인증 방식을 사용하기 위한 필수 유틸리티
 - xauth list $DISPLAY
