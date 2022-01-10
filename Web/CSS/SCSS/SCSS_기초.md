@@ -132,5 +132,120 @@ extend 코드를 확장하거나 재사용하고 싶을 때 사용
 
 
 
+extend
+
+%button {
+
+  border-radius: 7px;
+
+  font-size: 12px;
+
+  text-transform: uppercase;
+
+  padding : 5px 10px;
+
+} 
+
+선언 방법은 % 을 적어주면 된다.
 
 
+
+@import "_buttons";
+
+
+
+a {
+
+ @extend %button;
+
+}
+
+
+
+사용방법은 다음과 같이 파일을 import하고 @extend %extend명을 적어주면 된다.
+
+
+
+a {
+
+ @extend %button;
+
+ text-decoration: none;
+
+}
+
+button {
+
+ @extend %button;
+
+ border: none;
+
+}
+
+
+
+공통적인 것들을 extend로 공유하고 다른 부분만 따로 작성해주면 각 요소에 알맞게 css를 적용할 수 있다.
+
+
+
+
+
+
+
+$minIphone: 500px;
+
+$maxIphone: 690px;
+
+$minTablet: $minIphone + 1;
+
+$maxTablet: 1120px;
+
+
+
+@mixin responsive($device) {
+
+ @if $device == "iphone" {
+
+  @media screen and (min-width: $minIphone) and (max-width: $maxIphone) {
+
+   @content;
+
+  }
+
+ } @else if $device == "tablet" {
+
+  @media screen and (min-width: $minTablet) and (max-width: $maxTablet) {
+
+   @content;
+
+  }
+
+ } @else if $device == "iphone-l" {
+
+  @media screen and (max-width: $minIphone) and (max-width: $maxIphone) and (orientation: landscape) {
+
+   @content;
+
+  }
+
+ } @else if $device == "ipad-l" {
+
+  @media screen and (min-width: $minTablet) and (max-width: $maxTablet) and (orientation: landscape) {
+
+   @content;
+
+  }
+
+ }
+
+}
+
+미디어쿼리를 좀 더 쉽게 적용할 수 있다.
+
+
+
+Bourbon, Sass MediaQueries, Animated SCSS
+
+유용한 SCSS 라이브러리들
+
+나중에 확인해보자

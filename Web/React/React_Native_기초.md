@@ -258,6 +258,45 @@ true면 허용, false면 허용 안함
 
 
 
+TouchableOpacity
+View가 터치에 적절하게 반응하도록 하는 래퍼.
+아래로 누르면 래핑된 View의 opacity가 감소하여 흐리게 표시됩니다.
+https://docs.expo.dev/versions/v44.0.0/react-native/touchableopacity/
+
+TouchableHighlight
+View가 터치에 적절하게 반응하도록 하는 래퍼.
+아래로 누르면 래핑된 View의 background를 표시합니다.
+
+배경색을 바꾸고 싶을 때 사용
+
+https://docs.expo.dev/versions/v44.0.0/react-native/touchablehighlight/
+
+TouchableWithoutFeedback
+합당한 이유가 없는 한 사용하지 마십시오.
+Press에 반응하는 모든 요소는 만졌을 때 시각적 피드백이 있어야 합니다.
+
+UI의 변화가 없음
+
+https://docs.expo.dev/versions/v44.0.0/react-native/touchablewithoutfeedback/
+
+Pressable
+Pressable은 정의된 자식에 대한 다양한 Press 상호 작용 단계를 감지할 수 있는 핵심 구성 요소 래퍼입니다.
+https://docs.expo.dev/versions/v44.0.0/react-native/pressable/
+
+
+
+hitSlope
+
+요소의 바깥까지 터치를 가능하게 하는 속성
+
+
+
+TextInput
+키보드를 통해 앱에 텍스트를 입력하기 위한 기본 구성 요소입니다.
+https://docs.expo.dev/versions/v44.0.0/react-native/textinput/
+
+
+
 
 
 
