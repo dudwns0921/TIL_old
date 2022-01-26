@@ -60,11 +60,6 @@ ReactJS는 Javascript와 거의 동일해서 Javascript의 커뮤니티가 React
 ```html
 <script>
     const root = document.getElementById("root");
-    const Title = Re
-        <h3
-        onMouseEnter={()=>console.log("You entered title")}
-        >I'm Title</h3>
-    );
     const btn = React.createElement("button", {
         id: "sexybtn", 
     	onClick: ()=>console.log("Hi"),

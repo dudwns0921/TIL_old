@@ -67,14 +67,6 @@ React는 새로운  count변수를 `Example` 컴포넌트에 넘기며 해당 �
 
 ## :bulb:Tip!
 
-### 최상위(at the Top Level)에서만 Hook을 호출해야 한다.
-
-반복문, 조건문 혹은 중첩된 함수 내에서 Hook을 호출하면 안 된다.
-
-대신 early return이 실행되기 전에 항상 React 함수의 최상위(at the top level)에서 Hook을 호출해야 한다.
-
-
-
 ### 오직 React 함수 내에서 Hook을 호출해야 한다.
 
 Hook을 일반적인 JavaScript 함수에서 호출하면 안 된다.
