@@ -102,7 +102,7 @@ WEB-INF 폴더는 웹 애플리케이션에 관한 정보들이 저장되는 곳
 
 ### 2. 아래 위치에 있는 context.xml에 커넥션풀 객체 생성 시 연결할 데이터베이스 정보를 작성한다.
 
-![2조_정영준 2021-10-22 13-56-32-736](./md-images/2조_정영준 2021-10-22 13-56-32-736.jpg)	
+![connection1](./md-images/connection1.jpg)	
 
 context.xml 파일에서 `<context>`태그 안에다가 데이터베이스 정보를 작성해준다.
 
@@ -126,7 +126,7 @@ context.xml 파일에서 `<context>`태그 안에다가 데이터베이스 정�
 
 ### 3. 커넥션풀을 사용할 프로젝트 안의 web.xml에 JNDI 설정을 위해 `<resouce-ref> `태그를 넣는다.
 
-![2조_정영준 2021-10-26 08-45-04-728](.\md-images\2조_정영준 2021-10-26 08-45-04-728.jpg)	
+![connection2](.\md-images\connection2.jpg)	
 
 `<res-ref-name>`태그에 들어가는 이름은 context.xml 파일에 설정한 이름과 같아야 한다.
 
