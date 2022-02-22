@@ -318,15 +318,15 @@ public class ConnectionManager {
 
 ### 로그인 성공
 
-![2조_정영준 2021-10-26 00-08-43-246](./md-images/2조_정영준 2021-10-26 00-08-43-246.jpg)	
+![project1](./md-images/project1.jpg)	
 
-<img src="./md-images/2조_정영준 2021-10-26 00-08-48-057.jpg" alt="2조_정영준 2021-10-26 00-08-48-057" style="zoom: 150%;" />	
+<img src="./md-images/project2.jpg" alt="2조_정영준 2021-10-26 00-08-48-057" style="zoom: 150%;" />	
 
 ### 로그인 실패
 
-![2조_정영준 2021-10-26 00-08-29-817](./md-images/2조_정영준 2021-10-26 00-08-29-817.jpg)	
+![project3](./md-images/project3.jpg)	
 
-<img src="./md-images/2조_정영준 2021-10-26 00-08-34-782.jpg" alt="2조_정영준 2021-10-26 00-08-34-782" style="zoom:150%;" />	
+<img src="./md-images/project4.jpg" alt="2조_정영준 2021-10-26 00-08-34-782" style="zoom:150%;" />	
 
 아이디와 비밀번호가 데이터베이스에 있는지 판단하고 메시지 출력하는 게 고작이지만,
 
