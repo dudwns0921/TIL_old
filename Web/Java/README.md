@@ -2,7 +2,7 @@
 
 - ## [Spring](./Spring)
 
-- ## [project](./project)
+- ## [Project](./Project)
 
 
 
@@ -18,7 +18,7 @@ ___
 
 - ## [Web Jquery](./Web_Jquery.md)
 
-- ## [Web Servelt Forword](./Web_Servlet_Forward)
+- ## [Web Servelt Forword](./Web_Servlet_Forward.md)
 
 - ## [Web ServletContext&ServletConfig](./Web_ServletContext_ServletConfig.md)
 
