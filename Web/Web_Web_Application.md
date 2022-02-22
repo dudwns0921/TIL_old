@@ -12,7 +12,7 @@
 
 ## 웹 애플리케이션의 디렉터리 구조
 
-![mermaid-diagram-20211020152108](C:\Users\User\Desktop\TIL\Web\md-images\mermaid-diagram-20211020152108.png)
+![mermaid-diagram-20211020152108](.\md-images\mermaid-diagram-20211020152108.png)
 
 
 
