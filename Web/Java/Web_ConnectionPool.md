@@ -126,7 +126,7 @@ context.xml 파일에서 `<context>`태그 안에다가 데이터베이스 정�
 
 ### 3. 커넥션풀을 사용할 프로젝트 안의 web.xml에 JNDI 설정을 위해 `<resouce-ref> `태그를 넣는다.
 
-![connection2](.\md-images\connection2.jpg)	
+![connection2](./md-images/connection2.jpg)	
 
 `<res-ref-name>`태그에 들어가는 이름은 context.xml 파일에 설정한 이름과 같아야 한다.
 
