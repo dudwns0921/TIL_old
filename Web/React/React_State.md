@@ -29,20 +29,19 @@ modifier 함수를 사용해 state, 즉 어플리케이션의 데이터를 바�
 아래 예시를 통해 실제로 useState 함수가 어떻게 쓰이는지 알아보자.
 
 ```react
- 1:  import React, { useState } from 'react';
- 2:
- 3:  function Example() {
- 4:    const [count, setCount] = useState(0);
- 5:
- 6:    return (
- 7:      <div>
- 8:        <p>You clicked {count} times</p>
- 9:        <button onClick={() => setCount(count + 1)}>
-10:         Click me
-11:        </button>
-12:      </div>
-13:    );
-14:  }
+import React, { useState } from 'react';
+
+function Example() {
+	const [count, setCount] = useState(0);
+        return (
+          <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>
+             Click me
+            </button>
+          </div>
+        );
+}
 ```
 
 - **네 번째 줄**
@@ -51,7 +50,7 @@ modifier 함수를 사용해 state, 즉 어플리케이션의 데이터를 바�
 
 또한, `useState`의 인자의 값으로 `0`을 넘겨주면 `count` 값을 0으로 초기화할 수 있다.
 
-- **아홉 번째 줄**
+- **여덟 번째 줄**
 
 사용자가 버튼 클릭을 하면 `setCount` 함수를 호출하여 state 변수를 갱신한다.
 
