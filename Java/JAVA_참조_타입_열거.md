@@ -6,28 +6,24 @@
 
 이와 같이 한정된 값만을 갖는 데이터 타입이 열거 타입(enumeration type)이다.
 
-
-
 ## 열거 타입 선언
 
 열거 타입을 선언하는 방법은 다음과 같다.
 
 ```
 public enum Week{
-	MONDAY,
-	TUESDAY,
-	WEDNESDAY,
-	THURSDAY,
-	FRIDAY,
-	SATURDAY,
-	SUNDAY
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY,
+    SUNDAY
 
 }
 ```
 
 열거 타입 안의 열거 상수들은 관례적으로 대문자로 작성한다.
-
-
 
 ## 열거 타입 변수
 
@@ -43,15 +39,11 @@ Week today = Week.FRIDAY;
 
 열거 상수는 열거 타입.열거 상수의 형태로 사용되어야만 한다.
 
-
-
 ```java
 Week birthday = null;
 ```
 
 열거 타입 변수는 참조 타입이기 때문에 null 값도 저장이 가능하다.
-
-
 
 # :books:참고자료
 
