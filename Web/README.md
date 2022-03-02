@@ -1,21 +1,5 @@
 # WEB
 
-- ## [HTML](./HTML)
-
-- ## [CSS](./CSS)
-
-- ## [Javascript](./Javascript)
-
-- ## [React](./React)
-
-- ## [Java](./Java)
-
-  
-
-___
-
-
-
 - ## [Web 기초](./Web_기초.md)
 
 - ## [Web&Internet](./Web&Internet.md)
@@ -25,5 +9,3 @@ ___
 - ## [Web Application](./Web_Web_Application.md)
 
 - ## [Web Server&WAS&Web Container](./Web_Web_Server&WAS&Web_Container.md)
-
-  

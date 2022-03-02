@@ -16,8 +16,6 @@ Array(7);          // [ , , , , , , ]
 Array(1, 2, 3);    // [1, 2, 3]
 ```
 
-
-
 ## from()
 
 `Array.from()` 메서드는 유사 배열 객체(array-like object)나 반복 가능한 객체(iterable object)를 얕게 복사해 새로운`Array` 객체를 만든다.
@@ -54,21 +52,18 @@ buttons에다가 일괄적으로 이벤트 리스너를 추가하고 싶을 때 
 ```javascript
 buttons.forEach(button => {
     button.addEventListener("click", ()=>console.log("I've been clicked!"));
-    
+
 });
 
 // Uncaught TypeError: buttons.forEach is not a function
 
 Array.from(buttons).forEach(button => {
     button.addEventListener("click", ()=>console.log("I've been clicked!"));
-    
-});
 
+});
 ```
 
 buttons는 배열이 아니기 때문에 forEach 메소드를 가지고 있지 않다. Array.from()을 사용하면 유사 배열 객체를 배열로 바꿀 수 있다.
-
-
 
 ## find()
 
@@ -76,11 +71,11 @@ buttons는 배열이 아니기 때문에 forEach 메소드를 가지고 있지 �
 
 ```javascript
 const friends = [
-	"Jun@korea.com",
-	"Lee@gmail.com",
-	"Nico@naver.com",
-	"Lynn@hanmail.net",
-	"Rose@kakao.com"
+    "Jun@korea.com",
+    "Lee@gmail.com",
+    "Nico@naver.com",
+    "Lynn@hanmail.net",
+    "Rose@kakao.com"
 ];
 
 const target = friends.find(friend => friend.includes("Jun"));
@@ -90,19 +85,17 @@ console.log(target); // Jun@korea.com
 console.log(wrongTarget); // undefined
 ```
 
-
-
 ## findIndex()
 
 **`findIndex()`** 메서드는 **주어진 판별 함수를 만족하는** 배열의 첫 번째 요소에 대한 **인덱스**를 반환한다. 만족하는 요소가 없으면 -1을 반환한다.
 
 ```javascript
 const friends = [
-	"Jun@korea.com",
-	"Lee@gmail.com",
-	"Nico@naver.com",
-	"Lynn@hanmail.net",
-	"Rose@kakao.com"
+    "Jun@korea.com",
+    "Lee@gmail.com",
+    "Nico@naver.com",
+    "Lynn@hanmail.net",
+    "Rose@kakao.com"
 ];
 
 const target = friends.findIndex(friend => friend.includes("Jun"));
@@ -116,11 +109,11 @@ findIndex 함수는 배열 안에 요소를 수정하고 싶을 때 유용하다
 
 ```javascript
 const friends = [
-	"Jun@gorea.com", // korea.com으로 고쳐서 출력해보기
-	"Lee@gmail.com",
-	"Nico@naver.com",
-	"Lynn@hanmail.net",
-	"Rose@kakao.com"
+    "Jun@gorea.com", // korea.com으로 고쳐서 출력해보기
+    "Lee@gmail.com",
+    "Nico@naver.com",
+    "Lynn@hanmail.net",
+    "Rose@kakao.com"
 ];
 
 const check = () => friends.findIndex((friend) => friend.includes("gorea.com"));
@@ -137,8 +130,6 @@ friends[target] = `${username}@${email}`;
 
 console.log(friends);
 ```
-
-
 
 ## fill()
 
@@ -159,20 +150,10 @@ console.log(array1.fill(6));
 // [6, 6, 6, 6]
 ```
 
-
-
 # :books:참고자료
 
-노마드코더 강의
+이웅모, 모던 자바스크립트 Deep Dive, 위키북스, 2020
 
-https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/of
-
-https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/from
-
-https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/find
-
-https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
-
-https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/fill
+노마드코더 수업 내용
 
 # 

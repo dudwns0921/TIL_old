@@ -6,8 +6,6 @@
 
 이터러블 또는 객체 리터럴에서 필요한 값만 추출하여 변수에 할당할 때 유용
 
-
-
 ## 배열 디스트럭처링 할당
 
 배열의 각 요소를 배열로부터 추출하여 1개 이상의 변수에 할당한다.
@@ -54,8 +52,6 @@ const [one, two, three, four = 4] = arr;
 console.log(`${one}, ${two}, ${three}, ${four}`); // 1,2,3,넷
 ```
 
-
-
 ## 객체 디스트럭처링 할당
 
 객체의 각 프로퍼티를 객체로부터 추출하여 1개 이상의 변수에 할당한다.
@@ -66,8 +62,8 @@ console.log(`${one}, ${two}, ${three}, ${four}`); // 1,2,3,넷
 
 ```javascript
 const user = {
-	firstName : "Youngjun",
-	lastname : "Jung"
+    firstName : "Youngjun",
+    lastname : "Jung"
 }
 
 const {firstName, lastname} = user;
@@ -79,8 +75,8 @@ console.log(firstName, lastname); // Youngjun Jung
 
 ```javascript
 const user = {
-	firstName : "Youngjun",
-	lastname : "Jung"
+    firstName : "Youngjun",
+    lastname : "Jung"
 }
 
 const {firstName:fn, lastname:ln} = user;
@@ -100,7 +96,7 @@ console.log(firstName, lastName); // Youngjun Jung
 
 ```javascript
 function printTodo({content, completed}) {
-	console.log(`할 일 ${content}는 ${completed ? "완료" : "비완료"} 상태입니다.`);
+    console.log(`할 일 ${content}는 ${completed ? "완료" : "비완료"} 상태입니다.`);
 }
 
 printTodo({ id: 1, content: "HTML", completed: true}); //할 일 HTML는 완료 상태입니다.
@@ -110,9 +106,9 @@ printTodo({ id: 1, content: "HTML", completed: true}); //할 일 HTML는 완료 
 
 ```javascript
 const todos = [
-	{ id: 1, content: "HTML", completed: true},
-	{ id: 2, content: "CSS", completed: true},
-	{ id: 3, content: "Javascript", completed: false}
+    { id: 1, content: "HTML", completed: true},
+    { id: 2, content: "CSS", completed: true},
+    { id: 3, content: "Javascript", completed: false}
 ]
 
 const [{id : id_1}, two, three] = todos;
@@ -123,18 +119,16 @@ console.log(id_1, two, three);// 1 {id: 2, content: 'CSS', completed: true} {id:
 
 ```javascript
 const user = {
-	name: "Jun",
-	address: {
-		zipCode: '12345',
-		city: 'Seoul'
-	}
+    name: "Jun",
+    address: {
+        zipCode: '12345',
+        city: 'Seoul'
+    }
 };
 
 const {address : {zipCode}} = user;
 console.log(zipCode); // 12345
 ```
-
-
 
 # :bulb:Tip!
 
@@ -151,15 +145,15 @@ console.log(liveCity); // Seoul
 // 부산으로 이사를 갔다는 정보를 API를 통해 객체로 받음
 
 const data = {
-	user: {
-		updatedCity: "Busan"
-	}
+    user: {
+        updatedCity: "Busan"
+    }
 };
 
 ({
-	user: {
-		updatedCity: liveCity
-	}
+    user: {
+        updatedCity: liveCity
+    }
 } = data);
 console.log(liveCity); // Busan
 ```
@@ -210,3 +204,8 @@ console.log(thu, fri); // thu fri
 
 콤마를 통해 필요없는 요소들은 생략하고 원하는 요소들만 변수에 할당해줄 수 있다.
 
+# :books:참고자료
+
+이웅모, 모던 자바스크립트 Deep Dive, 위키북스, 2020
+
+노마드코더 수업 내용

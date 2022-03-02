@@ -1,14 +1,10 @@
 # ES6 함수의 추가 기능
 
-
-
 ## 화살표 함수
 
 화살표 함수는 function 키워드 대신 화살표를 사용하여 기존의 함수 정의 방식보다 간략하게 함수를 정의할 수 있다.
 
 화살표 함수는 표현뿐만 아니라 내부 동작도 기존의 함수보다 간략하다.
-
-
 
 ### 함수 정의
 
@@ -16,8 +12,6 @@
 const add = (x, y) => x+y;
 add(3,5); // -> 8
 ```
-
-
 
 ### 매개변수 선언
 
@@ -38,8 +32,6 @@ const arrow = x => {...};
 ```javascript
 const arrow = () => {...};
 ```
-
-
 
 ### 함수 몸체 정의
 
@@ -74,8 +66,6 @@ const arrow = (id, content) => {id, content}
 arrow(1, "Javascript"); // -> undefined
 ```
 
-
-
 ```
 const button = document.querySelector("button");
 
@@ -83,18 +73,13 @@ button.addEventListener("click", function() {
     console.log(this);
     console.log("I've been clicked");
 })
-
 ```
-
-
 
 ### this
 
 화살표 함수는 함수 자체의 this 바인딩을 갖지 않는다.
 
 따라서 화살표 함수 내부에서 this를 참조하면 상위 스코프의 this를 그대로 참조한다. 이를 lexical this라고 한다.
-
-
 
 사실 이 부분을 이해하기 위해서는 this, 스코프 등에 관련된 많은 지식들이 필요하므로 간단한 예시를 통해 살짝만 살펴보자.
 
@@ -120,15 +105,11 @@ button.addEventListener("click", ()=>{
 
 위 예제에서 상위 스코프는 제일 바깥 범위인 Window 객체가 되기 때문이다.
 
-
-
 위에서 말했듯이 이 부분을 완벽하게 이해하는 건 쉽지 않다.
 
 지금은 그냥 화살표 함수를 사용하게 되면 this는 상위 스코프의 this를 참조하게 되므로
 
 this를 사용하고 싶다면 일반 함수를 사용한다는 정도로만 알아두자.
-
-
 
 ## 매개변수 기본값
 
@@ -136,7 +117,7 @@ this를 사용하고 싶다면 일반 함수를 사용한다는 정도로만 알
 
 ```javascript
 function sum(x=0, y=0) {
-	return x+y;
+    return x+y;
 }
 
 console.log(sum(1)); // NaN
@@ -148,7 +129,7 @@ console.log(sum(1)); // NaN
 
 ```javascript
 function sum(x=0, y=0) {
-	return x+y;
+    return x+y;
 }
 
 console.log(sum(1,2)); // 3
@@ -156,3 +137,9 @@ console.log(sum(1)); // 1
 ```
 
 기본값은 위와 같이 변수의 값을 할당하듯이 매개변수에 값을 할당해주면 된다.
+
+# :books:참고자료
+
+이웅모, 모던 자바스크립트 Deep Dive, 위키북스, 2020
+
+노마드코더 수업 내용
