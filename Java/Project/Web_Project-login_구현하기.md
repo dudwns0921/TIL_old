@@ -1,5 +1,3 @@
-
-
 # Web Project-login 구현하기
 
 멀티캠퍼스에 참여한 지도 이제 한 달이 넘어간다.
@@ -8,23 +6,17 @@
 
 그래서 완전하지는 않지만 복습도 할 겸 간단하게 로그인 기능을 구현한 웹 애플리케이션을 만드는 과정을 기록해보려고 한다.
 
-
-
 로그인 기능은 어떻게 구현해야 할까?
 
 정말 간단하게 생각해본다면 사용자가 아이디와 비밀번호를 입력했을 때,
 
 데이터베이스에 그 정보가 있다면 로그인 성공 메시지를 띄우고, 없다면 로그인 실패 메시지를 띄우면 될 것이다.
 
-
-
 이번에 만들 웹 애플리케이션은 웹 애플리케이션 모델 2 방식을 따를 것이다.
 
 모델 2 방식의 핵심은 웹 애플리케이션의 각 기능(클라이언트의 요청 처리, 응답 처리, 비즈니스 로직 처리)을 분리해서 구현하자는 것이다.
 
 모델 2 방식에는 여러 가지 개념들이 사용되는데, 가장 많이 사용되는 개념이 바로 MVC이다.
-
-
 
 MVC는 Model-View-Controller의 약자로 일종의 프로그램 디자인 패턴이다.
 
@@ -33,8 +25,6 @@ MVC는 Model-View-Controller의 약자로 일종의 프로그램 디자인 패�
 하지만 MVC가 모델 2 방식의 뼈대를 이루기 때문에 모델 2 방식으로 구현한다는 말은 MVC로 구현한다는 말과 같다고 볼 수 있다.
 
 각각의 구성 요소에서 어떤 일들을 담당하는지 좀 더 자세히 살펴보자.
-
-
 
 ## Model
 
@@ -45,14 +35,10 @@ DTO는 Data Transfer Object의 약자로 쉽게 말하면 여러 데이터들을
 
 가령 userDTO를 만든다면 안에는 아이디, 비밀번호, 이름 등 다양한 데이터들이 들어갈 것이다.
 
-
-
 ## View
 
 - JSP가 화면 기능을 담당한다.
 - Model에서 처리한 결과를 화면에 표시한다.
-
-
 
 ## Controller
 
@@ -60,20 +46,14 @@ DTO는 Data Transfer Object의 약자로 쉽게 말하면 여러 데이터들을
 - 클라이언트의 요청을 분석하고 필요한 모델을 호출한다.
 - Model에서 처리한 결과를 보여주기 위해 JSP를 선택한다.
 
-
-
 이번에 만들 웹 애플리케이션의 구조는 기본적으로는 MVC 패턴을 따르지만, Model 부분을 좀 더 세분화할 생각이다.
 
 DAO와 Service 클래스로 나눌 생각이고, 각각은 아래와 같은 역할을 담당한다.
-
-
 
 ## Service
 
 - 컨트롤러에게 호출되어 실제 비즈니스 로직 처리
 - DAO를 호출해 DB CRUD를 처리 후 컨트롤러로 반환
-
-
 
 ## DAO
 
@@ -83,8 +63,6 @@ DAO와 Service 클래스로 나눌 생각이고, 각각은 아래와 같은 역�
 
 다만 더 큰 프로젝트를 하게 됐을 때를 대비해 세분화하는 방법을 알아두자.
 
-
-
 실행되는 순서는 다음과 같다.
 
 1. 사용자가 로그인을 요청하면 서블릿에서 필요한 모델을 호출한다.
@@ -93,8 +71,6 @@ DAO와 Service 클래스로 나눌 생각이고, 각각은 아래와 같은 역�
 4. 컨트롤러는 처리한 결과를 보여주기 위해 설정한 JSP파일로 포워딩한다. 
 
 여기서 포워드는 하나의 서블릿에서 다른 서블릿이나 JSP와 연동하는 방법을 의미한다.
-
-
 
 ## Controller
 
@@ -117,44 +93,42 @@ import login.service.LoginService;
 
 @WebServlet("/LoginController")
 public class LoginController extends HttpServlet {
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
-	}
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
+    }
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// get요청이나 post요청이나 다 여기서 처리
-		String command = request.getParameter("cmd");
-		String url = "/login/result.jsp";
-		
-		if(command.equals("loginCheck")) {
-			String id = request.getParameter("userId");
-			String pwd = request.getParameter("userPwd");
-			String message1 = null;
-			String message2 = null;
-			
-			boolean flag = new LoginService().loginService(id, pwd);
-	
-			if(flag) {
-				// 유저 정보가 있음
-				message1 = "로그인 성공했습니다!";
-				message2 = " 돌아오신 걸 환영합니다!";
-			} else {
-				// 유저 정보가 없음
-				message1 = "로그인 실패했습니다.";
-				message2 = "을 찾을 수 없습니다. 회원가입 부탁드립니다.";
-			}
-			request.setAttribute("message1", message1);
-			request.setAttribute("message2", message2);
-			request.setAttribute("id", id);
-		}
-		RequestDispatcher rd = request.getRequestDispatcher(url);
-		rd.forward(request, response);
-	}
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // get요청이나 post요청이나 다 여기서 처리
+        String command = request.getParameter("cmd");
+        String url = "/login/result.jsp";
+
+        if(command.equals("loginCheck")) {
+            String id = request.getParameter("userId");
+            String pwd = request.getParameter("userPwd");
+            String message1 = null;
+            String message2 = null;
+
+            boolean flag = new LoginService().loginService(id, pwd);
+
+            if(flag) {
+                // 유저 정보가 있음
+                message1 = "로그인 성공했습니다!";
+                message2 = " 돌아오신 걸 환영합니다!";
+            } else {
+                // 유저 정보가 없음
+                message1 = "로그인 실패했습니다.";
+                message2 = "을 찾을 수 없습니다. 회원가입 부탁드립니다.";
+            }
+            request.setAttribute("message1", message1);
+            request.setAttribute("message2", message2);
+            request.setAttribute("id", id);
+        }
+        RequestDispatcher rd = request.getRequestDispatcher(url);
+        rd.forward(request, response);
+    }
 
 }
 ```
-
-
 
 ## Model
 
@@ -166,17 +140,15 @@ package login.service;
 import login.DAO.LoginDAO;
 
 public class LoginService {
-	public boolean loginService(String id, String pwd) {
-		boolean flag = false;
+    public boolean loginService(String id, String pwd) {
+        boolean flag = false;
 
-		flag = new LoginDAO().selectUser(id, pwd);
-		
-		return flag;
-	}
+        flag = new LoginDAO().selectUser(id, pwd);
+
+        return flag;
+    }
 }
 ```
-
-
 
 ### LoginDAO
 
@@ -193,30 +165,29 @@ import com.mysql.cj.protocol.Resultset;
 import login.ConnectionManager.ConnectionManager;
 
 public class LoginDAO {
-	public boolean selectUser(String id, String pwd) {
-		boolean flag = false;
-		
-		// 사용자 아이디와 비밀번호로 조건 걸어서 select 쿼리 실행
-		Connection con = ConnectionManager.getConnection();
-		String sql = "select count(*) from t_member where id=? and pwd=?";
-		try {
-			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, id);
-			pstmt.setString(2, pwd);
-			ResultSet rs = pstmt.executeQuery();
-			while(rs.next()) {
-				if(rs.getInt(1)>0) {
-					flag = true;
-            		// 데이터베이스에 사용자 정보가 존재하면 flag에 true 할당
-				}
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return flag;
-	}
-}
+    public boolean selectUser(String id, String pwd) {
+        boolean flag = false;
 
+        // 사용자 아이디와 비밀번호로 조건 걸어서 select 쿼리 실행
+        Connection con = ConnectionManager.getConnection();
+        String sql = "select count(*) from t_member where id=? and pwd=?";
+        try {
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, id);
+            pstmt.setString(2, pwd);
+            ResultSet rs = pstmt.executeQuery();
+            while(rs.next()) {
+                if(rs.getInt(1)>0) {
+                    flag = true;
+                    // 데이터베이스에 사용자 정보가 존재하면 flag에 true 할당
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+}
 ```
 
 ### ConnectionManager
@@ -237,29 +208,27 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 public class ConnectionManager {
-	public static Connection getConnection() {
-		Connection con = null;
-		Context initCtx = null;
-		try {
-			initCtx = new InitialContext();
-			Context envCtx = (Context)initCtx.lookup("java:comp/env");
-			DataSource ds = (DataSource)envCtx.lookup("loginDB");
-			con = ds.getConnection();
-		} catch (NamingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		return con;
-	}
+    public static Connection getConnection() {
+        Connection con = null;
+        Context initCtx = null;
+        try {
+            initCtx = new InitialContext();
+            Context envCtx = (Context)initCtx.lookup("java:comp/env");
+            DataSource ds = (DataSource)envCtx.lookup("loginDB");
+            con = ds.getConnection();
+        } catch (NamingException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+
+        return con;
+    }
 }
 ```
-
-
 
 ## View
 
@@ -275,13 +244,13 @@ public class ConnectionManager {
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Login</h1>
-	<form action="/LoginMVC2/LoginController?cmd=loginCheck" method="post">
-	<!--스트링쿼리로 로그인체크 페이지로 이동하기 위한 추가정보 전달-->
-		Id:<input type="text" name="userId" required/>
-		Password:<input type="text" name="userPwd" required/>
-		<input type="submit" value="LOGIN" />
-	</form>
+    <h1>Login</h1>
+    <form action="/LoginMVC2/LoginController?cmd=loginCheck" method="post">
+    <!--스트링쿼리로 로그인체크 페이지로 이동하기 위한 추가정보 전달-->
+        Id:<input type="text" name="userId" required/>
+        Password:<input type="text" name="userPwd" required/>
+        <input type="submit" value="LOGIN" />
+    </form>
 </body>
 </html>
 ```
@@ -299,34 +268,32 @@ public class ConnectionManager {
 </head>
 <body>
 <%
-	String message1 = (String) request.getAttribute("message1");
-	String message2 = (String) request.getAttribute("message2");
-	String id = (String) request.getAttribute("id");
-	out.print(message1);
+    String message1 = (String) request.getAttribute("message1");
+    String message2 = (String) request.getAttribute("message2");
+    String id = (String) request.getAttribute("id");
+    out.print(message1);
 %>
 <br>
 <%
-	out.print(id+"님"+message2);
+    out.print(id+"님"+message2);
 %>
 </body>
 </html>
 ```
 
-
-
 ## 실제 사용 화면
 
 ### 로그인 성공
 
-![project1](./md-images/project1.jpg)	
+![project1](./md-images/project1.jpg)    
 
-<img src="./md-images/project2.jpg" alt="2조_정영준 2021-10-26 00-08-48-057" style="zoom: 150%;" />	
+<img src="./md-images/project2.jpg" alt="2조_정영준 2021-10-26 00-08-48-057" style="zoom: 150%;" />    
 
 ### 로그인 실패
 
-![project3](./md-images/project3.jpg)	
+![project3](./md-images/project3.jpg)    
 
-<img src="./md-images/project4.jpg" alt="2조_정영준 2021-10-26 00-08-34-782" style="zoom:150%;" />	
+<img src="./md-images/project4.jpg" alt="2조_정영준 2021-10-26 00-08-34-782" style="zoom:150%;" />    
 
 아이디와 비밀번호가 데이터베이스에 있는지 판단하고 메시지 출력하는 게 고작이지만,
 

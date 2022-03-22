@@ -8,8 +8,6 @@
 
 매번 새로운 페이지를 전달하는 게 점점 버거워지게 되었다.
 
-
-
 ## SPA란?
 
 이러한 문제를 해결하기 위해 등장한 것이 SPA(Single Page Application)이다.
@@ -17,8 +15,6 @@
 이름에서도 파악할 수 있듯이, 어떤 웹 사이트의 전체 페이지를 하나의 페이지에 담아 동적으로 화면을 바꿔가며 표현하는 것이 SPA이다.
 
 페이지 변경이 일어난다고 보여지는 것 또한 최초 로드된 자바스크립트를 통해 미리 브라우저에 올라간 템플릿만 교체되는 것이다.
-
-
 
 ## SPA 라우팅
 
@@ -32,65 +28,51 @@
 
 따라서 우리가 직접 브라우저의 API 를 사용하고 주소마다 다른 뷰를 보여줄 수 있도록 설정해야 한다.
 
-
-
 ## react-router-dom 사용법
 
 리액트에서 라우팅 기능을 위해 사용하는 것이 바로 react-router-dom이다. 
 
 create-react-app을 통해 만든 간단한 프로젝트를 통해 react-router-dom을 어떻게 사용하는지 알아보자.
 
-![route1](./md-images/route1.jpg)	
+![route1](./md-images/route1.jpg)    
 
 프로젝트의 구조는 다음과 같다.
 
 파일 하나하나를 좀 더 자세히 살펴보자.
 
-![route2](./md-images/route2.jpg)	
+![route2](./md-images/route2.jpg)    
 
 기본적인 구조는 Route 컴포넌트 안에 여러 개의 Routes 컴포넌트가, 그 안에 실제 주소와 렌더링할 컴포넌트가 담긴 Route 컴포넌트가 들어있는 구조이다.
 
 Route 태그의 path에는 Base url, 가령 http://localhost:3000 을 제외한 나머지만 적어주면 된다.
 
-
-
 http://localhost:3000/ 로 이동을 한다면 Home 컴포넌트가 렌더링되고,
 
 http://localhost:3000/join 으로 이동을 한다면 Join 컴포넌트가 렌더링되는 것이다.
-
-
 
 ## :bulb:Tip!
 
 react-router-dom에는 BrowserRouter와 HashRouter가 제공되는데, 둘의 주요 차이점은 URL을 저장하고 웹 서버와 통신하는 방식이다.
 
-![route3](./md-images/route3.jpg)	
+![route3](./md-images/route3.jpg)    
 
 여기서 Link는 브라우저의 새로고침 없이도 유저를 다른 페이지로 이동시켜주는 컴포넌트이다.
 
 Route 컴포넌트로 각 주소에 어떤 컴포넌트가 렌더링될지 설정했다면, Link는 해당 주소로 이동할 수 있는 통로를 만들어준다고 볼 수 있다.
 
-![route4](./md-images/route4.jpg)	
+![route4](./md-images/route4.jpg)    
 
-![route5](./md-images/route5.jpg)				
+![route5](./md-images/route5.jpg)                
 
 Join과 Login에는 단순히 해당 컴포넌트의 이름만을 반환하도록 코드를 작성했다.
 
+![route6](./md-images/route6.jpg)    
 
+![route7](./md-images/route7.jpg)    
 
-![route6](./md-images/route6.jpg)	
-
-
-
-
-
-![route7](./md-images/route7.jpg)	
-
-![route8](./md-images/route8.jpg)	
+![route8](./md-images/route8.jpg)    
 
 실제 작동하는 모습은 위와 같다.
-
-
 
 # :books:참고자료
 

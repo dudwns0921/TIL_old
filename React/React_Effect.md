@@ -1,5 +1,3 @@
-
-
 # Effect Hook
 
 state가 변경될 때 react는 컴포넌트를 렌더링하기 위해 모든 코드들을 다시 실행한다.
@@ -11,8 +9,6 @@ state가 변경될 때 react는 컴포넌트를 렌더링하기 위해 모든 �
 이후에 state가 변화할 때는 그 API에서 똑같은 정보를 가져오고 싶지는 않을 것이다.
 
 이 때 사용하는 것이 바로 Effect Hook이다. 
-
-
 
 useEffect는 실행시키고자 하는 함수와 React가 이벤트를 주시하게끔 하는 dependency로 이루어져있다.
 
@@ -37,10 +33,9 @@ function Example() {
     </div>
   );
 }
-
 ```
 
-  <img src="./md-images/2조_정영준 2021-12-16 08-19-29-558-16396104051031.jpg" alt="2조_정영준 2021-12-16 08-19-29-558" style="zoom: 67%;" />
+<img src="./md-images/2조_정영준 2021-12-16 08-19-29-558-16396104051031.jpg" alt="2조_정영준 2021-12-16 08-19-29-558" style="zoom: 67%;" />
 
 - **6번째 줄**
 
@@ -52,8 +47,6 @@ useEffect 함수에 dependency가 비어있다.
 
 만약 dependency 안에 count state가 들어있다면 count가 바뀔 때마다 useEffect 안의 코드는 계속 실행될 것이다.
 
-
-
 useEffect에는 유용한 기능이 하나 더 있는데, 바로 cleanup이라는 기능이다.
 
 cleanup은 컴포넌트가 없어질 때 코드를 실행시킬 수 있도록 한다.
@@ -64,7 +57,7 @@ cleanup은 컴포넌트가 없어질 때 코드를 실행시킬 수 있도록 �
 import { useState, useEffect } from "react";
 
 function Hello() {
-    
+
   useEffect(() => {
     console.log("hi :)");
     return () => console.log("bye :(");
@@ -84,15 +77,13 @@ function App() {
 }
 ```
 
-<img src="./md-images/2조_정영준 2021-12-16 08-21-35-586-16397024114401.jpg" alt="2조_정영준 2021-12-16 08-21-41-176" style="zoom:67%;" />	
+<img src="./md-images/2조_정영준 2021-12-16 08-21-35-586-16397024114401.jpg" alt="2조_정영준 2021-12-16 08-21-41-176" style="zoom:67%;" />    
 
-<img src="./md-images/2조_정영준 2021-12-16 08-21-41-176-16396105733182.jpg" alt="2조_정영준 2021-12-16 08-21-41-176" style="zoom:67%;" />	
+<img src="./md-images/2조_정영준 2021-12-16 08-21-41-176-16396105733182.jpg" alt="2조_정영준 2021-12-16 08-21-41-176" style="zoom:67%;" />    
 
 버튼을 누르면 Hello 컴포넌트가 생성되고, 다시 버튼을 누르면 Hello 컴포넌트가 없어지는 간단한 구조이다.
 
 컴포넌트가 렌더링될 때 콘솔에 Hi가 출력되고 없어질 때 bye가 출력된다.
-
-
 
 - **5번째 줄**
 
@@ -100,13 +91,6 @@ function App() {
 
 컴포넌트가 없어질 때 실행시킬 함수를 return에다가 작성하면 cleanup 기능을 사용할 수 있다.
 
-
-
 # :books:참고자료
 
 노마드코더 강의
-
-
-
-
-

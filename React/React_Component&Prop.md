@@ -4,15 +4,13 @@
 
 props라는 임의의 입력을 받은 후 화면에 어떻게 표시되는지를 기술하는 React 엘리먼트를 반환한다.
 
-
-
 # 함수 컴포넌트와 클래스 컴포넌트
 
 컴포넌트를 정의하는 데는 두 가지 방법이 있다.
 
 ```react
 function Welcome(props) {
-	return <h1>Hello, {props.name}</h1>;
+    return <h1>Hello, {props.name}</h1>;
 }
 ```
 
@@ -20,25 +18,19 @@ function Welcome(props) {
 
 javascript 함수이기 때문에 말 그대로 함수 컴포넌트라고 부른다.
 
-
-
 ```react
 class Welcome extends React.Component {
-	render() {
-		return <h1>Hello, {this.props.name}</h1>;
-	}
+    render() {
+        return <h1>Hello, {this.props.name}</h1>;
+    }
 }
 ```
 
 react 관점에서 볼 때 위 두 가지 유형의 컴포넌트는 동일하다.
 
-
-
 ## :bulb:Tip!
 
 사용자 정의 컴포넌트의 이름은 항상 대문자로 시작해야 한다.
-
-
 
 # 컴포넌트 렌더링
 
@@ -51,8 +43,6 @@ const element = <Welcome name="Jun" />
 React가 사용자 정의 컴포넌트를 발견하면 JSX 어트리뷰트(여기서는 name)과 자식을 해당 컴포넌트의 단일 객체로 전달한다.
 
 이 객체를 props라고 한다.
-
-
 
 다음은 페이지에 Hello, Jun을 렌더링하는 예시이다.
 
@@ -75,15 +65,11 @@ ReactDOM.render(
 3. `Welcome` 컴포넌트는 결과적으로 `<h1>Hello, Jun</h1>` 엘리먼트를 반환합니다.
 4. React DOM은 `<h1>Hello, Jun</h1>` 엘리먼트와 일치하도록 바뀐 부분만을 찾아 DOM을 효율적으로 업데이트한다.
 
-
-
 # 컴포넌트 합성
 
 컴포넌트는 자신의 출력에 다른 컴포넌트를 참조할 수 있다.
 
 이는 모든 세부 단계에서 동일한 추상 컴포넌트를 사용할 수 있음을 의미한다.
-
-
 
 예시로 이를 살펴보자.
 
@@ -109,8 +95,6 @@ ReactDOM.render(
 ```
 
 이런 식으로 Welcome을 여러 번 업데이트하는 App 컴포넌트를 만들 수 있다. 
-
-
 
 # 컴포넌트 추출
 
@@ -188,8 +172,6 @@ Comment 컴포넌트가 훨씬 간단해진 것을 확인할 수 있다.
 
 UI 일부가 여러 번 사용되거나 UI 일부가 자체적으로 복잡한 경우에는 별도의 컴포넌트로 만드는 게 좋다.
 
-
-
 ## :bulb:Tip!
 
 ### props는 읽기 전용이다.
@@ -202,15 +184,13 @@ PropTypes는 React에서 타입 체크를 위해 사용되는 라이브러리이
 
 ```react
 Welcome.propTypes = {
-	name: PropTypes.string,
+    name: PropTypes.string,
 }
 ```
 
 위와 같은 경우 Welcome 컴포넌트의 name prop은 string 타입을 받아야 한다.
 
 이러한 경고 메시지는 개발 모드에서만 출력되기 때문에 이를 위반한다고 해서 사용자들에게는 아무 영향을 끼치지 않는다.
-
-
 
 # :books:참고자료
 
