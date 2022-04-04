@@ -84,6 +84,8 @@ innerHTML과 동일한 기능을 수행하며 태그를 파싱하여 화면에 �
 <div :class="{ red: isRed }"></div>
 <div :class="[classA, classB]"></div>
 <div :class="[classA, { classB: isB, classC: isC }]">
+<div v-bind:class="[isActive ? activeClass : '', errorClass]"></div>
+<!-- 삼항 연산자를 사용할 수 있다. 콤마 뒤는 디폴트값이다. -->
 
 <!-- CSS 스타일 바인딩 -->
 <div :style="{ fontSize: size + 'px' }"></div>
