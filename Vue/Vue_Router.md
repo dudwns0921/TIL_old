@@ -39,8 +39,6 @@ import router from './router/router.js';
 const myApp = createApp(App);
 myApp.use(router);
 myApp.mount('#app');
-
-
 ```
 
 라우터를 사용하기 위해서는 총 4단계가 필요하다.
@@ -96,8 +94,6 @@ use를 통해 라우터를 사용한 컴포넌트에서 router-view 태그를 �
 }    
 </style>
 ```
-
-
 
 # :books:참고자료
 
