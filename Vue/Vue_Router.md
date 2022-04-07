@@ -95,6 +95,29 @@ use를 통해 라우터를 사용한 컴포넌트에서 router-view 태그를 �
 </style>
 ```
 
+# 코드 스플리팅
+
+SPA는 웹 사이트의 전체 페이지를 하나의 페이지에 담아 동적으로 화면을 바꿔가며 표현하는 애플리케이션이다. SPA의 단점은 최초에 전체 페이지를 모두 받아오기 때문에 최초 로딩 시간이 오래 걸린다는 점이다. 이러한 단점을 코드 스플리팅을 통해 해결할 수 있다. 
+
+```js
+// src/router/index.js
+
+...
+routes: [
+        {
+            path: '/login',
+            component: () => import ('@/views/LoginPage.vue'),
+        },
+        {
+            path: '/signup',
+            component: () => import ('@/views/SignupPage.vue'),
+        },
+    ]
+...
+```
+
+component의 LoginPage를 바로 넣는 게 아니라 화살표함수를 이용해서 코드 스플리팅을 한다. 이렇게 하면 최초에 모든 파일을 다 들고오지 않고 해당 url 로 이동했을 때 필요한 JS 파일을 그 때 그 때 들고 오게 된다. (다이나믹 임포트)
+
 # :books:참고자료
 
 [Getting Started | Vue Router](https://router.vuejs.org/guide/)

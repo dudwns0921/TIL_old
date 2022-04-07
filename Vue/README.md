@@ -7,3 +7,4 @@
 - ## [Vue Reuse](./Vue_Reuse.md)
 - ## [Vue Computed&Watch](./Vue_Computed&Watch.md)
 - ## [Vue_Router](./Vue_Router.md)
+- ## [Vuex](./Vue_vuex.md)
