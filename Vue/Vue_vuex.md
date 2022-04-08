@@ -201,8 +201,6 @@ methods: {
 
 actions를 사용할 때는 dispatch 메서드를 사용해주면 된다. 보이다시피 아까의 긴 코드가 간결하게 2줄로 정리되었다. 
 
-
-
 # :books:참고자료
 
 https://vuex.vuejs.org/

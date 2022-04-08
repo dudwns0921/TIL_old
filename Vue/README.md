@@ -8,3 +8,4 @@
 - ## [Vue Computed&Watch](./Vue_Computed&Watch.md)
 - ## [Vue_Router](./Vue_Router.md)
 - ## [Vuex](./Vue_vuex.md)
+- ## [Vue Filters](./Vue_Filters.md)
