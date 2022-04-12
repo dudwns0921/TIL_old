@@ -18,4 +18,6 @@
 
 - ## [비동기 처리와 async & await](./Javascript_async&await.md)
 
+- ## [ES2020](./Javascript_ES2020.md)
+
 

@@ -2,8 +2,6 @@
 
 이전에 토큰 기반 인증 시스템에 대해서 다뤄본 적이 있다.
 
-
-
 토큰 기반 시스템의 일반적인 흐름은 다음과 같다.
 
 1. 유저가 아이디와 비밀번호로 **로그인**을 한다
@@ -25,7 +23,7 @@ const axiosService = axios.create({
 });
 ```
 
-Vue 프로젝트에서는 일반적으로 위와 같이 토큰 기반 인증 시스템을 구현한다.
+Vue 프로젝트에서는 일반적으로 아래 과정을 통해 토큰 기반 인증 시스템을 구현한다.
 
 1. vuex를 통해 만든 store에 token state를 생성한다.
 
@@ -97,9 +95,3 @@ export function setInterceptors(axiosService) {
 ```
 
 위와 같이 코드를 짜면 인터셉터가 요청을 보내기 전에 store에서 token 값을 가져와 header에 싣게 된다.
-
-
-
-:books: 
-
-
