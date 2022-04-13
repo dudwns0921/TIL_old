@@ -202,6 +202,7 @@ export default {
   components: {
     Home,
     Posts,
+    Archive
   },
   data() {
     return {
@@ -236,14 +237,14 @@ export default {
 .active {
   background-color: blue;
 }
-</style>e>
+</style>
 ```
 
 ```html
 <!-- is 속성에서 렌더링될 각각 컴포넌트 -->
 
 <template>
-  <h1>페이명</h1>
+  <h1>페이지명</h1>
 </template>
 ```
 
