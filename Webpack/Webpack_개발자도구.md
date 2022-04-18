@@ -40,10 +40,6 @@ module.exports = {
 
 `devtool` 속성을 추가하고 소스 맵 설정 옵션 중 하나를 선택해 지정해주면 된다.
 
-
-
 # :books: 참고자료
 
 [Webpack Dev Server | 웹팩 핸드북](https://joshua1988.github.io/webpack-guide/devtools/webpack-dev-server.html)
-
-

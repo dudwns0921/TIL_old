@@ -106,13 +106,21 @@ export default {
 
 ## Computed와 Watch, 언제 써야할까?
 
-많은 자료들을 통해 살펴봤지만, 결국 템플릿에 각각의 속성을 사용할지 말지에 따라 그 용도가 구분된다고 생각한다.
+> https://ui.toast.com/weekly-pick/ko_20190307
 
-Computed의 가장 기본적인 목적은 템플릿의 가독성을 향상시키는 것이다. 그렇기 때문에 당연하게도 템플릿에 사용해야만 한다. 
+위의 글이 해당 문제에 대한 답변을 가장 깔끔하게 적어놓았다고 생각한다.
 
-wathc는 특정 데이터의 변화를 감지하여 로직을 수행해주는 것이 목적이다. 로직을 수행하는데 그 목적이 있기 때문에 watch 속성은 템플릿에 사용할 이유가 없다.
+정리하자면,
 
-어떻게 보면 너무 뻔하고 단순한 차이같지만 여러 자료들을 보면서 직관적으로 받아들이게 된 둘의 차이점이기도 하다.
+**`watch`는 "부수 효과" 처리를 위한 것이다. 만약 상태를 변경하고 싶다면 `computed`를 사용하는 것이 좋다.**
+
+"부수 효과"는 컴포넌트 외부의 동작이나 비동기 처리를 말한다.
+
+일반적인 예는 다음과 같다.
+
+- 데이터를 가져오는 것 (Fetching data)
+- DOM 조작하기
+- 로컬 저장소 또는 오디오 재생과 같은 브라우저 API 사용
 
 # :books:참고자료
 
@@ -121,3 +129,5 @@ wathc는 특정 데이터의 변화를 감지하여 로직을 수행해주는 �
 [Computed 속성과 Watch | Vue.js](https://v3.ko.vuejs.org/guide/computed.html#computed-%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC)
 
 https://medium.com/@hozacho/%EB%A7%A8%EB%95%85%EC%97%90vuejs-computed-vs-watch-%EC%96%B8%EC%A0%9C%EC%8D%A8%EC%95%BC%ED%95%A0%EA%B9%8C-d25316c4ef42
+
+https://ui.toast.com/weekly-pick/ko_20190307

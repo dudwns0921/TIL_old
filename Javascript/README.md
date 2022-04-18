@@ -22,7 +22,7 @@
 
 - ## [Prototype](./Javascript_Prototype.md)
 
-- ## [브라우저 환경에서의 자바스크립트](./Javascript_브라우저_환경_.md)
+- ## [브라우저 환경에서의 자바스크립트](./Javascript_브라우저_환경.md)
 
 - ## [DOM Methods](./Javascript_DOM_methods.md)
 

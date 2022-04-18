@@ -67,7 +67,7 @@ Changes not staged for commit:
 
 reset을 이해하기 위해서는 먼저 아래의 그림을 이해해야 한다.
 
-![git_undoing_1](../md-images/git_undoing_1.PNG)    
+![git_undoing_1.PNG](md-images/d51a2f676c601cc7f8534a930b5ebb885b8c0911.PNG)
 
  여기서 HEAD는 현재 브랜치의 마지막 커밋의 스냅샷이다. Index는 바로 다음에 커밋할 것들로 Staging Area라고도 한다. 마지막으로 Working Directory는 말 그대로 우리의 작업 공간이다.
 
@@ -83,19 +83,19 @@ reset을 이해하기 위해서는 먼저 아래의 그림을 이해해야 한�
 
 ### reset --soft
 
-![git_undoing_2](../md-images/git_undoing_2.PNG)    
+![git_undoing_2.PNG](md-images/df8236d5d48f3de09e874c977c895e12096154e7.PNG)
 
- --soft는 HEAD만 돌아가려는 커밋으로 옮겨놓는다.  그렇지만 그림에서 볼 수 있듯이 Index(Staging Area)와 Working Directory의 작업들은 그대로 남아있다. 만약 가장 최근의 커밋을 지정했다면, --soft 옵션 후 commit을 하면 원상태로 돌아가게 되는 것이다.
+  --soft는 HEAD만 돌아가려는 커밋으로 옮겨놓는다.  그렇지만 그림에서 볼 수 있듯이 Index(Staging Area)와 Working Directory의 작업들은 그대로 남아있다. 만약 가장 최근의 커밋을 지정했다면, --soft 옵션 후 commit을 하면 원상태로 돌아가게 되는 것이다.
 
 ### reset --mixed
 
-![git_undoing_3](../md-images/git_undoing_3.PNG)    
+![git_undoing_3.PNG](md-images/d4c912cca8bb966a7f2ef607963571a23d15a3aa.PNG)
 
---mixed는 -soft와 마찬가지로 HEAD로 돌아가려는 특정 커밋을 가리키게 한다. 그러고 나서 Staging Area를 비우기까지 한다. add 명령까지 되돌리는 것이다. 결과적으로는 Working Directory만 그대로 남아있는 것이다.
+ --mixed는 -soft와 마찬가지로 HEAD로 돌아가려는 특정 커밋을 가리키게 한다. 그러고 나서 Staging Area를 비우기까지 한다. add 명령까지 되돌리는 것이다. 결과적으로는 Working Directory만 그대로 남아있는 것이다.
 
 ### reset --hard
 
-![git_undoing_4](../md-images/git_undoing_4.PNG)    
+![git_undoing_4.PNG](md-images/76766333e843c0ee0ba0d55d668e6fd747dea31a.PNG)
 
 --hard는 가장 강력한 방법으로  Working Directory의 상태도 특정 버전으로 되돌려버린다. 
 
