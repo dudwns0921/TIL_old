@@ -27,3 +27,7 @@
 - ## [DOM Methods](./Javascript_DOM_methods.md)
 
 - ## [DOM Node](./Javascript_DOM_Node.md)
+
+- ## [모던자바스크립트 : 문서 수정하기 과제](./Javascript_문서수정하기_assignments.md)
+
+- ## [모던자바스크립트 : 브라우저 이벤트 과제](./Javascript_브라우저이벤트_assignments.md)
