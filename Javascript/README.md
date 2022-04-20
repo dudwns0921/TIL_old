@@ -31,3 +31,7 @@
 - ## [모던자바스크립트 : 문서 수정하기 과제](./Javascript_문서수정하기_assignments.md)
 
 - ## [모던자바스크립트 : 브라우저 이벤트 과제](./Javascript_브라우저이벤트_assignments.md)
+
+- ## [모던자바스크립트 : 요소 사이즈 및 스크롤](./Javascript_요소사이즈스크롤.md)
+
+- ## [모던자바스크립트 : 버블링과 캡처링](./Javascript_버블링과캡처링.md)
