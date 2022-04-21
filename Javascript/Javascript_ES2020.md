@@ -31,8 +31,6 @@ console.log("Hello", name ?? "anonymous");
 
 단순히 참과 거짓을 판단하는 것이 아니라 null과 undefined를 판단하는 연산자이다. 그래서 OR 연산자를 대체한다기보다는 특별한 경우에 ?? 연산자를 사용해준다고 생각하면 된다.
 
-
-
 ## Optional chaining
 
 optional chaining 연산자는 참조나 기능이 `undefined` 또는 `null`일 수 있을 때 연결된 객체의 값에 접근하는 방법을 제공한다.
@@ -53,10 +51,6 @@ let nestedProp = obj.first?.second;
 
 `.` 대신에 `?.` 연산자를 사용함으로써, 자바스크립트는 `obj.first.second`에 접근하기 전에 `obj.first`가 `null` 또는 `undefined`가 아니라는 것을 암묵적으로 확인하는 것을 알고 있다. 만약 `obj.first`가 `null` 또는 `undefined`이라면, 그 표현식은 자동으로 단락되어 `undefined`가 반환된다.
 
-
-
 # :books: 참고자료
 
 노마드코더 강의 일부
-
-
