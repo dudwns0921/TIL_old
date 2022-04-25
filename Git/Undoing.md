@@ -136,4 +136,4 @@ e06bd89 첫 번째 커밋
 
 ## 참고자료
 
-- ### Git 공식 책 https://git-scm.com/doc
+- ### Git 공식 책 https://git-scm.com/do

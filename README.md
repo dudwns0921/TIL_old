@@ -32,12 +32,12 @@
 
 - ### [소프트웨어 공학](./소프트웨어_공학)
 
-- ## [Vue](./Vue)
+- ### [Vue](./Vue)
 
-- ## [Typescript](./Typescript)
+- ### [Typescript](./Typescript)
 
-- ## [JWT](./JWT)
+- ### [JWT](./JWT)
 
-- ## [Axios](./Axios)
+- ### [Axios](./Axios)
 
-- ## [개발환경](./개발환경)
+- ### [개발환경](./개발환경)
