@@ -9,3 +9,5 @@
 - ## [멀티캠퍼스 GIt 특강 2일차 Undoing](./Undoing.md)
 
 - ## [Git Rebase](./Git_Rebase.md)
+
+- ## [Git 3-way-merge](./Git_3-Way-Merge.md)
