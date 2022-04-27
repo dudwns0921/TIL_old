@@ -327,5 +327,3 @@ function groupById(array) {
 # :books:참고자료
 
 https://ko.javascript.info/array-methods#ref-400
-
-
