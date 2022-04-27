@@ -11,3 +11,7 @@
 - ## [SCSS 기초](./CSS_SCSS_기초.md)
 
 - ## [CSS REM](./CSS_REM.md)
+
+- ## [CSS 상속](./CSS_상속.md)
+
+- ## [CSS overflow](./CSS_overflow.md)
