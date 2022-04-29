@@ -60,10 +60,6 @@ initial 키워드를 적용한 속성은 속성의 기본값을 요소에 적용
 
 unset 키워드는 부모로부터 상속할 값이 존재하면, 상속값을, 그렇지 않다면 기본값을 사용한다. 
 
-
-
 # :books:참고자료
 
 [Inheritance](https://web.dev/learn/css/inheritance/)
-
-

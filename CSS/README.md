@@ -14,4 +14,4 @@
 
 - ## [CSS 상속](./CSS_상속.md)
 
-- ## [CSS overflow](./CSS_overflow.md)
+- ## [CSS border-image 활용하기](./CSS_borderImage.md)

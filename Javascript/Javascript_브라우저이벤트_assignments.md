@@ -80,7 +80,6 @@ ul {
 .deactive {
   display: block;
 }
-
 ```
 
 ```javascript
