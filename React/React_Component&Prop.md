@@ -8,7 +8,7 @@ props라는 임의의 입력을 받은 후 화면에 어떻게 표시되는지�
 
 컴포넌트를 정의하는 데는 두 가지 방법이 있다.
 
-```react
+```javascript
 function Welcome(props) {
     return <h1>Hello, {props.name}</h1>;
 }
@@ -36,7 +36,7 @@ react 관점에서 볼 때 위 두 가지 유형의 컴포넌트는 동일하다
 
 React 엘리먼트는 사용자 정의 컴포넌트로도 나타낼 수 있다.
 
-```react
+```javascript
 const element = <Welcome name="Jun" />
 ```
 
@@ -46,7 +46,7 @@ React가 사용자 정의 컴포넌트를 발견하면 JSX 어트리뷰트(여�
 
 다음은 페이지에 Hello, Jun을 렌더링하는 예시이다.
 
-```react
+```js
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
@@ -73,7 +73,7 @@ ReactDOM.render(
 
 예시로 이를 살펴보자.
 
-```react
+```js
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
@@ -98,7 +98,7 @@ ReactDOM.render(
 
 # 컴포넌트 추출
 
-```react
+```js
 function Comment(props) {
   return (
     <div className="Comment">
@@ -126,7 +126,7 @@ function Comment(props) {
 
 이 컴포넌트는 구성요소들이 모두 중첩 구조로 이루어져 있어서 변경하기 어렵고, 각 구성요소를 개별적으로 재사용하기도 힘들다.
 
-```react
+```js
 function Avatar(props) {
   return (
     <img className="Avatar"
@@ -150,7 +150,7 @@ function UserInfo(props) {
 
 Avatar 컴포넌트와 UserInfo 컴포넌트를 추출했다.
 
-```react
+```js
 function Comment(props) {
   return (
     <div className="Comment">
@@ -182,7 +182,7 @@ UI 일부가 여러 번 사용되거나 UI 일부가 자체적으로 복잡한 �
 
 PropTypes는 React에서 타입 체크를 위해 사용되는 라이브러리이다.
 
-```react
+```js
 Welcome.propTypes = {
     name: PropTypes.string,
 }

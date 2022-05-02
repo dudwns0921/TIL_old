@@ -10,5 +10,6 @@
 
 - ## [React CSS Module](./React_CSS_Module.md)
 
-- ## [react route dom](./react-router-dom.md)
+- ## [React react router dom](./react-router-dom.md)
 
+- ## [React Smart&Dumb Components](./React_Smart&Dumb.md)

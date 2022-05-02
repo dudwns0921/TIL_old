@@ -14,7 +14,7 @@ useEffect는 실행시키고자 하는 함수와 React가 이벤트를 주시하
 
 즉, 내가 원하는 부분을 지정하여 그 부분만을 변화시킬 수 있는 것이다.
 
-```react
+```js
 import React, { useState, useEffect } from 'react';
 
 function Example() {
@@ -53,7 +53,7 @@ cleanup은 컴포넌트가 없어질 때 코드를 실행시킬 수 있도록 �
 
 자세한 건 아래 예시를 통해 살펴보자.
 
-```react
+```js
 import { useState, useEffect } from "react";
 
 function Hello() {
