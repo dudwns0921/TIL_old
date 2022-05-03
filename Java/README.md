@@ -38,4 +38,4 @@ ___
 
 - ## [Web ServletContext&ServletConfig](./Web_ServletContext_ServletConfig.md)
 
-- ## [Web 웹페이지 연결 기능](./Web_%EC%9B%B9_%ED%8E%98%EC%9D%B4%EC%A7%80_%EC%97%B0%EA%B2%B0_%EA%B8%B0%EB%8A%A5.md)_
+- ## [Web 웹페이지 연결 기능](./Web_%EC%9B%B9_%ED%8E%98%EC%9D%B4%EC%A7%80_%EC%97%B0%EA%B2%B0_%EA%B8%B0%EB%8A%A5.md)
