@@ -130,7 +130,7 @@ npm install eslint-plugin-prettier --save-dev
 하지만 이 방법은 포매팅과 관련된 ESLint 규칙이 없을 때 정상적으로 작동한다. 다시 말하면, Prettier의 포매팅 규칙과 ESLint의 포매팅 규칙이 충돌할 수도 있다는 것이다. 따라서 **eslint-config-prettier**를 통해 ESLint 포매팅 규칙들을 모두 비활성화하는 것이 좋다.
 
 ```bash
-npm install --save-dev eslint-config-prettier
+npm install eslint-config-prettier --save-dev
 ```
 
 ```json

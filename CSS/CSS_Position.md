@@ -4,15 +4,13 @@ position 속성은 HTML 요소가 위치를 결정하는 방식을 설정한다.
 
 이 속성에는 총 4가지 값이 존재한다. 각각을 차례대로 알아보자.
 
-
-
 ## Static
 
 position 속성의 기본값으로 단순히 웹페이지의 흐름에 따라 차례대로 HTML 요소들을 위치시킨다.
 
 position 속성값이 static인 경우 top, left, right, bottom 속성값의 영향을 받지 않는다.
 
-![static](./md-images/static.jpg)	
+![static](./md-images/static.jpg)    
 
 세 요소를 모두 static으로 지정했을 때 모습이다.
 
@@ -59,11 +57,7 @@ static은 기본값이기 때문에 따로 속성값을 선언하지 않아도 �
 </html>
 ```
 
-
-
-
-
-## Fixed 
+## Fixed
 
 말 그대로 HTML 요소를 고정시키기 위해 사용하는 속성값이다.
 
@@ -73,13 +67,11 @@ static은 기본값이기 때문에 따로 속성값을 선언하지 않아도 �
 
 하지만 top, left, right, bottom 속성값을 바꿔서 원래 위치를 변경할 수 있다.
 
-![fixed](./md-images/fixed.jpg)	
+![fixed](./md-images/fixed.jpg)    
 
 파란색 박스가 빨간색 박스 아래 위치에 고정된 걸 볼 수 있다.
 
 여기서 body 요소의 height 값을 엄청 크게 설정하고 스크롤을 아무리 내려도 파란색 박스의 위치는 그대로인 것을 확인할 수 있을 것이다.
-
-
 
 그리고 새로운 레이어에 있기 때문에 초록색 박스는 파란색 박스의 영향을 받지 않아 빨간색 박스 바로 밑에 오게 되었고, 
 
@@ -96,13 +88,11 @@ static은 기본값이기 때문에 따로 속성값을 선언하지 않아도 �
 <!--fixed된 걸 좀 더 잘 보기 위해서 파란색 박스의 크기를 수정했다.-->
 ```
 
-
-
 ## Relative
 
 HTML 요소가 처음 위치한 곳을 기준으로 주어진 top, left, right, bottom 속성값에 따라 이동시킨다.
 
-![relative](./md-images/relative.jpg)	
+![relative](./md-images/relative.jpg)    
 
 ```html
         .blue {
@@ -112,11 +102,7 @@ HTML 요소가 처음 위치한 곳을 기준으로 주어진 top, left, right, 
         }
 ```
 
-
-
 파란색 박스의 원래 위치에서 왼쪽으로 100px 만큼 이동했다.
-
-
 
 ## Absolute
 
@@ -126,7 +112,7 @@ position 속성값이 relative인 부모 요소를 기준으로 주어진 top, l
 
 하지만 속성값이 relative인 부모 요소가 없다면 가장 마지막 부모 요소인 body를 기준으로 이동하게 된다.
 
-![absolute](./md-images/absolute-16342537143391.jpg)	
+![absolute](./md-images/absolute-16342537143391.jpg)    
 
 현재 파란색 박스에 absolute 속성값을 주고 세 박스 요소를 둘러싼 parent 박스에 relative 속성값을 추가한 상태이다.
 
@@ -134,7 +120,7 @@ bottom의 속성값으로 20px을 선언했더니 parent 박스를 기준으로 
 
 속성값을 absolute로 주게 되면 fixed와 마찬가지로 새로운 레이어로 이동하기 때문에 다른 요소들에 영향을 받지 않는다.
 
-위의 예시에서도 초록색 박스를 덮어버린 것을 확인할 수 있다.	
+위의 예시에서도 초록색 박스를 덮어버린 것을 확인할 수 있다.    
 
 ```html
     <style>
@@ -164,7 +150,7 @@ bottom의 속성값으로 20px을 선언했더니 parent 박스를 기준으로 
 </body>
 ```
 
-![absolute2](./md-images/absolute2.jpg)	
+![absolute2](./md-images/absolute2.jpg)    
 
 이번에는 부모 요소에 relative 속성값이 추가되지 않아 body를 기준으로 움직이게 된 것이다.
 

@@ -44,7 +44,7 @@ form {
     text-align: center;
     cursor: pointer;
   }
-  
+
   div {
     background-color: blue;
     position: absolute;
@@ -53,7 +53,7 @@ form {
     width: 100px;
     height: 100px;
   }
-  
+
   p {
     background-color: red;
     position: absolute;
@@ -64,7 +64,7 @@ form {
     line-height: 50px;
     margin: 0;
   }
-  
+
   body {
     line-height: 25px;
     font-size: 16px;
@@ -109,10 +109,6 @@ elem.addEventListener(..., {capture: true}) ;
 elem.addEventListener(...,true);
 ```
 
-
-
 # :books:참고자료
 
 https://ko.javascript.info/bubbling-and-capturing
-
-
