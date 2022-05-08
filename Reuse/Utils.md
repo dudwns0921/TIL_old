@@ -22,7 +22,7 @@ const validateEmail = email => {
 function saveAuthToCookie(value) {
   document.cookie = `til_auth=${value}`;
 }
-// 쿠키의 저장할 키와 
+
 function saveUserToCookie(value) {
   document.cookie = `til_user=${value}`;
 }

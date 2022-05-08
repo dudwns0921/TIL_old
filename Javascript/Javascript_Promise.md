@@ -18,13 +18,13 @@
 
 #### Pending(대기)
 
-먼저 아래와 같이 `new Promise()` 메서드를 호출하면 대기(Pending) 상태가 됩니다.
+먼저 아래와 같이 `new Promise()` 메서드를 호출하면 대기(Pending) 상태가 된다.
 
 ```js
 new Promise();
 ```
 
-`new Promise()` 메서드를 호출할 때 콜백 함수를 선언할 수 있고, 콜백 함수의 인자는 `resolve`, `reject`입니다.
+`new Promise()` 메서드를 호출할 때 콜백 함수를 선언할 수 있고, 콜백 함수의 인자는 `resolve`, `reject`이다.
 
 ```js
 new Promise(function(resolve, reject) {
@@ -62,7 +62,7 @@ getData().then(function(resolvedData) {
 
 #### Rejected(실패)
 
-`new Promise()`로 프로미스 객체를 생성하면 콜백 함수 인자로 `resolve`와 `reject`를 사용할 수 있다고 했습니다. 여기서 `reject`를 아래와 같이 호출하면 실패(Rejected) 상태가 된다.
+`new Promise()`로 프로미스 객체를 생성하면 콜백 함수 인자로 `resolve`와 `reject`를 사용할 수 있다고 했는데, 여기서 `reject`를 아래와 같이 호출하면 실패(Rejected) 상태가 된다.
 
 ```js
 new Promise(function(resolve, reject) {
