@@ -152,7 +152,40 @@ next 함수 인자에 따라서 라우팅 허용 여부가 달라진다.
 
 - next(url) : 특정 라우트로 진입, route.push와 같은 역할을 한다고 생각하면 된다.
 
-주의할 점은 어떠한 경우에도 next()를 호출해야한다는 점이다. 호출되지 않을 경우 라우팅이 진행되지 않고 대기 상태에 빠진다. 
+주의할 점은 어떠한 경우에도 next()를 호출해야한다는 점이다. 호출되지 않을 경우 라우팅이 진행되지 않고 대기 상태에 빠진다.
+
+## Named Routes
+
+route에는 path와 더불어 name 속성을 제공해줄 수 있다. name 속성은 다음과 같은 장점을 가진다.
+
+- url 하드코딩 필요 없음
+- url 오타 방지
+- params에 대한 자동 인코딩 / 디코딩
+- 경로 순위 우회 가능
+
+```js
+const routes = [
+  {
+    path: '/user/:username',
+    name: 'user',
+    component: User
+  }
+]
+```
+
+```vue
+<router-link :to="{ name: 'user', params: { username: 'erina' }}">
+  User
+</router-link>
+```
+
+named route를  router-link에 사용하기 위해서는 router-link의 to 속성에다가 route 객체를 전달해주면 된다. 
+
+```js
+router.push({ name: 'user', params: { username: 'erina' } })
+```
+
+위와 같이 해당 route 객체를 push 메서드에 전달해 같은 결과를 얻을 수 있다.
 
 # :books:참고자료
 
