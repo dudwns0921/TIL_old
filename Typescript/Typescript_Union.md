@@ -52,7 +52,7 @@ interface Developer {
 type Jun = Person & Developer;
 ```
 
-위 코드는 `Person` 인터페이스의 타입 정의와 `Developer` 인터페이스의 타입 정의를 `&` 연산자를 이용하여 합친 후 `Jun` 이라는 타입에 할당한 코드입니다. 결과적으로 `Jun`의 타입은 아래와 같이 정의된다.
+위 코드는 `Person` 인터페이스의 타입 정의와 `Developer` 인터페이스의 타입 정의를 `&` 연산자를 이용하여 합친 후 `Jun` 이라는 타입에 할당한 코드이다. 결과적으로 `Jun`의 타입은 아래와 같이 정의된다.
 
 ```typescript
 {
