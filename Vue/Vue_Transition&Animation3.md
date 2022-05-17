@@ -134,7 +134,54 @@ export default {
 
 4. 트랜지션 속성에 의해 바뀐 배경색은 0.3초 후에 ease-out의 형태로 적용된다.
 
+## Animating with Watchers
 
+watcher를 이용해 숫자인 state에 애니메이션을 적용할 수도 있다.
+
+```vue
+<template>
+  <div>
+    Type a number: <input v-model="number" />
+    <p>{{ tweened }}</p>
+  </div>
+</template>
+<script>
+import gsap from 'gsap';
+
+export default {
+  data() {
+    return {
+      number: 0,
+      tweened: 0,
+    };
+  },
+  watch: {
+    number(n) {
+      gsap.to(this, { duration: 0.5, tweened: Number(n) || 0 });
+    },
+  },
+};
+</script>
+<style scoped></style>
+```
+
+1. input의 값이 v-model 디렉티브로 인해 number에 적용된다.
+2. number가 변경되면 watch 속성의 number(n)가 실행된다.
+3. number(n) 함수는 tweened의 값이 입력한 number의 값으로 변하는 과정에 애니메이션을 적용시켜준다. 위의 this는 vue 컴포넌트 자체를 의미한다.
+
+### gsap
+
+**The standard for modern web animation**
+
+공식 홈페이지에서 위와 같이 소개하고 있다. 애니메이션을 좀 더 쉽게 구현할 수 있도록 해주는 라이브러리이다.
+
+#### gsap.to()
+
+```js
+gsap.to(".box", {rotation: 27, x: 100, duration: 1});
+```
+
+첫 번째 인자에는 애니메이션을 적용시키려는 요소를, 두 번째 인자에는 변경 후의 상태를 적어주면 된다.
 
 # :books:참고자료
 
