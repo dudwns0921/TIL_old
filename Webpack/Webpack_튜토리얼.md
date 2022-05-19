@@ -123,10 +123,10 @@ module.exports = {
 
 ### 적용 전
 
-![](file://C:\Users\220307\OneDrive - Obigo Inc\바탕 화면\TIL\Webpack\md-images\2022-04-11-15-13-48-image.png?msec=1649657628182?msec=1649661026000)
+![img1](.\md-images\2022-04-11-15-13-48-image.png?msec=1649657628182?msec=1649661026000)	
 
 ### 적용 후
 
-![](file://C:\Users\220307\OneDrive - Obigo Inc\바탕 화면\TIL\Webpack\md-images\2022-04-11-15-12-07-image.png?msec=1649657527697?msec=1649661026000)
+![img2](.\md-images\2022-04-11-15-12-07-image.png?msec=1649657527697?msec=1649661026000)	
 
 네트워크 패널 상으로 두 실습의 차이를 살펴보자. 가장 큰 차이점은 HTTP 요청의 개수가 줄었다는 점이다. HTTP 요청 숫자를 줄이면 웹 애플리케이션의 성능을 높여줄 뿐만 아니라 사용자가 사이트를 조작하는 시간을 앞당겨 줄 수 있게 된다.
