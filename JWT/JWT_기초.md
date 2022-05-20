@@ -10,7 +10,7 @@
 
 > JSON Web Token (JWT) is an open standard ([RFC 7519](https://tools.ietf.org/html/rfc7519)) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the **HMAC** algorithm) or a public/private key pair using **RSA** or **ECDSA**.
 
-JWT는 당사자들간에 JSON 객체를 통해 정보를 전송하는 간단하고 완벽한 방법을 제공하는 개방형 표준이다. 이 정보는 전자 서명이 이루어지기 때문에 검증할 수 있고, 신뢰도가 높다. JWT는 RSA 혹은 ECDSA를 이용한 공개키, 개인키 혹은 HMAC 알고리즘을 사용하는 비밀키를 통해 서명될 수 있다.
+JWT는 당사자들간에 JSON 객체를 통해 정보를 전송하는 간단하고 자가수용적인 방법을 제공하는 웹 표준이다. 여기서 자가수용적이란 필요한 모든 정보를 자체적으로 지니고 있다는 의미이다. 또한 JWT를 사용해 전달되는 정보는 전자 서명이 이루어지기 때문에 검증할 수 있고, 신뢰도가 높다. JWT는 RSA 혹은 ECDSA를 이용한 공개키, 개인키 혹은 HMAC 알고리즘을 사용하는 비밀키를 통해 서명이 이루어진다.
 
 JWT를 유용하게 사용할 수 있는 상황은 위에서도 언급했듯이 당사자들간에 정보를 전달하거나, 혹은 사용자에 대한 인증이 필요한 상황이다.
 
@@ -69,7 +69,7 @@ Header와 Payload는 Base64Url로 인코딩되어 각각 JWT의 첫 번째, 그�
 
 ## Signature
 
-JWT의 마지막 부분은 바로 signature이다. 이 서명은 헤더의 인코딩값과, 정보의 인코딩값을 합친후 주어진 비밀키로 해시를 해 생성한다. 서명 부분을 만드는 pseudo code의 구조는 다음과 같다.
+JWT의 마지막 부분은 바로 signature이다. 이 서명은 헤더의 인코딩값과, 정보의 인코딩값을 합친 후 주어진 비밀키로 해시를 해 생성한다. 서명 부분을 만드는 pseudo code의 구조는 다음과 같다.
 
 ```
 HMACSHA256(
@@ -77,3 +77,19 @@ HMACSHA256(
   base64UrlEncode(payload),
   secret)
 ```
+
+이렇게 만들어진 Header, Payload, Signature를 `.`를 중간자로 다 합쳐주면, 하나의 토큰이 완성된다.
+
+> https://jwt.io/
+
+위 사이트에서 JWT 토큰을 검증하고 생성할 수 있다.
+
+## 마무리
+
+지금까지 JWT란 무엇인지, 그 내부 구조에 대해서 알아봤다. 그렇게 어려운 작업은 아니지만 이 모든 것들을 구현하는 것은 꽤나 귀찮은 일이기도 하다. 실제로는 JWT 담당 라이브러리를 사용해 손쉽게 토큰을 만들고 검증할 수 있긴 하다. 다만 JWT가 정확하게 무엇인지 모르고 라이브러리를 마구잡이로 사용하기보다는 JWT를 정확하게 이해하고 라이브러리를 사용하는 것이 훨씬 더 도움이 된다고 생각한다.
+
+# :books:참고자료
+
+https://jwt.io/introduction
+
+https://velopert.com/2389
