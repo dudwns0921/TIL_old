@@ -1,4 +1,6 @@
-# React CSS MODULE
+# React
+
+## CSS MODULE
 
 CRA에서 css를 적용하는 방법은 두 가지가 있다.
 
