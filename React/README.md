@@ -11,3 +11,8 @@
 - ## [React react router dom](./react-router-dom.md)
 
 - ## [React Smart&Dumb Components](./React_Smart&Dumb.md)
+
+- ## [React useOutletContext](./React_useOutletContext.md)
+
+- ## [React react-app-rewired](./React_react-app-rewired.md)
+
