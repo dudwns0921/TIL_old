@@ -80,7 +80,7 @@ index.js 파일을 보면 App Route 컴포넌트가 다른 여러 Route 컴포�
 
 ## useOutletContext
 
-useOutletContext는 Outlet의 내장 함수로 Outlet 컴포넌트의 context의 prop에 배열로 넘긴 데이터, 함수 등을 반환한다. 주의할 점은 prop으로 넘겨줄 때나 반환받을 때나 항상 배열의 형태를 사용해야 한다는 점이다.
+useOutletContext는 Outlet의 내장 함수로 Outlet 컴포넌트의 context의 prop에 배열로 넘긴 데이터, 함수 등을 반환한다. 
 
 ```react
 // App.js
@@ -92,7 +92,7 @@ function App() {
     <div>
       <NavBar isLogin={isLogin} />
       <Content>
-        <Outlet context={[setIsLogin]} />
+        <Outlet context={setIsLogin} />
       </Content>
     </div>
   )
@@ -103,8 +103,8 @@ function App() {
 // Login.js
 
 function Login() {
-  const [setIsLogin] = useOutletContext()
-  // Redux 대신 props로 state와 setState를 전달
+  const setIsLogin = useOutletContext()
+  // Redux 대신 props로 setState를 전달
   ...
 const handleSubmit = async (e) => {
   e.preventDefault()
