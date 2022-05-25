@@ -152,11 +152,11 @@ userController.js를 다시 확인해보면 parse, 그러니까 다시 원래의
 app.use(express.json())
 ```
 
-위에서도 잠깐 언급했지만 서버를 만들기 위해 Express 프레임워크를 사용했다. 맨 처음 서버를 생성할 때, json()이라는 미들웨어를 사용하고 있다는 걸 확인할 수 있다. 
+위에서도 잠깐 언급했지만 서버를 만들기 위해 Express 프레임워크를 사용했고, json() 이라는 Express의 내장 미들웨어를 사용했다.
 
 > This is a built-in middleware function in Express. It parses incoming requests with JSON payloads and is based on body-parser.
 
-json()은 Express의 내장 미들웨어로 JSON 데이터와 함께 온 요청들을 parse한다. 그러니까 userController에서 req.body에 접근할 때는 이미 JS 객체로 변환된 상태인 것이다.
+json()은 JSON 데이터와 함께 온 요청들을 parse한다. 그러니까 userController에서 req.body에 접근할 때는 이미 JS 객체로 변환된 상태인 것이다.
 
 #### Express res.json()
 
@@ -193,7 +193,7 @@ const handleSubmit = async (e) => {
 
 # 😎마무리
 
-이전에 CS50이라는 하버드대학의 컴퓨터과학 강의를 들었는데, 교수님이 계속 강조하던 부분이 컴퓨터는 마법이 아니다라는 것이었다. 나도 맨 처음에 위에서 이 로직이 작동할 때는 진짜 신기하고 마법같았지만 이렇게 하나씩 살펴보니 결국 모든 게 다 구현되어 있기 때문에 가능한 것이라는 걸 알게 되었다. 앞으로도 로직이 작동된다고 그냥 넘어가기보다는 그 아래에서 무슨 일들이 일어나는지 꼭 살펴봐야겠다.
+이전에 CS50이라는 하버드대학의 컴퓨터과학 강의를 들었는데, 교수님이 계속 강조하던 부분이 '컴퓨터는 마법이 아니다'라는 것이었다. 나도 맨 처음에 위에서 이 로직이 작동할 때는 진짜 신기하고 마법같았지만 이렇게 하나씩 살펴보니 결국 모든 게 다 구현되어 있기 때문에 가능한 것이라는 걸 알게 되었다. 앞으로도 로직이 작동된다고 그냥 넘어가기보다는 그 아래에서 무슨 일들이 일어나는지 꼭 살펴봐야겠다.
 
 # :books:참고자료
 
