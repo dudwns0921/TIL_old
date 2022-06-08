@@ -186,7 +186,7 @@ export default {
 
 2. 부모 컴포넌트에서 해당 이벤트를 수신하고 receiveWarn이라는 메서드를 실행시킨다.
 
-```html
+```vue
 <button @click="$emit('sendWarn')">누르면 알림 발생</button>
 ```
 
@@ -239,10 +239,91 @@ export default {
 </script>
 ```
 
-부모 컴포넌트에서는 `v-on:자식 컴포넌트에서 발신한 이벤트명`을 입력해서 이벤트를 수신할 수 있다. 해당 디렉티브의 값으로 메서드나 연산을 할당해서 이벤트가 발생하면 작성한 메서드나 연산이 실행시킬 수 있다.
+부모 컴포넌트에서는 `v-on:자식 컴포넌트에서 발신한 이벤트명`을 입력해서 이벤트를 수신할 수 있다. 해당 디렉티브의 값으로 메서드나 연산을 할당해서 이벤트가 발생하면 작성한 메서드나 연산을 실행시킬 수 있다.
 
-# :books:참고자료
+### 데이터 전송
 
-[Props — Vue.js](https://kr.vuejs.org/v2/guide/components-props.html#Prop-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%82%AC)
+부모 컴포넌트에서 prop을 통해 데이터를 전달하듯이 자식 컴포넌트에서도 이벤트와 함께 데이터를 전송할 수 있다. 위의 예시에서는 단순히 이벤트만 발생시켰다면, 이번에는 자식 컴포넌트에서 경고창에 띄울 메시지도 함께 전달해보겠다.
 
-[Components | Cracking Vue.js](https://joshua1988.github.io/vue-camp/vue/components.html#%E1%84%8F%E1%85%A5%E1%86%B7%E1%84%91%E1%85%A9%E1%84%82%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3-%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC-%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B3-%E1%84%92%E1%85%A7%E1%86%BC%E1%84%89%E1%85%B5%E1%86%A8)
+```vue
+<!--자식 컴포넌트-->
+
+<template>
+  <div>
+    <input v-model="message" type="text" />
+    <button @click="sendWarn">누르면 알림 발생</button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      message: '',
+    };
+  },
+  methods: {
+    sendWarn() {
+      this.$emit('sendWarn', this.message);
+    },
+  },
+};
+</script>
+
+<style></style>
+```
+
+자식 컴포넌트는 기존 예시와 크게 달라진 부분은 없다. 다만 이번에는 emit 메서드의 두 번째 인자로 경고창에 띄울 메시지도 함께 전달하고 있다.
+
+> All extra arguments passed to `$emit()` after the event name will be forwarded to the listener. For example, with `$emit('foo', 1, 2, 3)` the listener function will receive three arguments.
+
+emit 메서드는 첫 번째 인자로 이벤트명을 받고, 그 이후의 추가되는 모든 인자들은 리스너의 인자로 전달된다. 위의 예시에서는 input에 작성된 메시지만을 전달하고 있지만, 여러 개의 인자를 전달하는 것도 가능하다.
+
+```vue
+<!--부모 컴포넌트-->
+
+<template>
+  <child-component @sendWarn="receiveWarn"></child-component>
+</template>
+
+<script>
+import ChildComponent from './components/ChildComponent.vue';
+
+export default {
+  name: 'App',
+  components: {
+    ChildComponent,
+  },
+  data() {
+    return {};
+  },
+  methods: {
+    receiveWarn(message) {
+      alert(message);
+    },
+  },
+};
+</script>
+```
+
+```vue
+  methods: {
+    receiveWarn(message) {
+      alert(message);
+    },
+  },
+```
+
+부모 컴포넌트에서 달라진 부분은 receiveWarn 메서드에 message가 인자가 추가되었다는 점이다. 앞에서 말했듯이 이벤트명을 제외하고 emit 메서드에 추가된 인자들은 리스너의 인자로 전달되기 때문에 자식 컴포넌트에서 작성된 message 데이터의 값을 사용할 수 있다.
+
+![image-20220608143604704](md-images/image-20220608143604704.png)
+
+
+
+정상적으로 작동한다.
+
+> # :books:참고자료
+>
+> [Props — Vue.js](https://kr.vuejs.org/v2/guide/components-props.html#Prop-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%82%AC)
+>
+> [Components | Cracking Vue.js](https://joshua1988.github.io/vue-camp/vue/components.html#%E1%84%8F%E1%85%A5%E1%86%B7%E1%84%91%E1%85%A9%E1%84%82%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3-%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC-%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B3-%E1%84%92%E1%85%A7%E1%86%BC%E1%84%89%E1%85%B5%E1%86%A8)

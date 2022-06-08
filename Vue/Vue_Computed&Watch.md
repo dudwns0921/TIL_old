@@ -73,6 +73,67 @@ export default {
 
 2. books 배열의 길이가 변하게 되면 publishedBooks의 속성도 변경된다. 
 
+### Computed 속성의 Setter
+
+Computed 속성은 기본적으로 getter이다. Computed 속성에 새로운 값을 할당하려고 하면 런타임 오류가 발생할 것이다. 그렇지만 드물게 writable, 수정 가능한 Computed 속성이 필요할 때가 있다. 아래 예시를 확인해보자.
+
+```vue
+<template>
+  <div class="body">
+    <h1>{{ fullName }}</h1>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      firstName: '존',
+      lastName: '도우'
+    }
+  },
+  computed: {
+    fullName: {
+      // getter
+      get() {
+        return this.firstName + ' ' + this.lastName
+      },
+      // setter
+      set(newValue) {
+        [this.firstName, this.lastName] = newValue.split(' ')
+      }
+    }
+  }
+}
+</script>
+```
+
+get 메서드와 set 메서드에서 각각 어떤 일이 일어나는지 살펴보자.
+
+#### get
+
+fullName Computed 속성은 data의 속성의 firstName과 lastName을 합쳐서 이름 전체를 반환한다.
+
+#### set
+
+fullName 속성에 firstName과 lastName을 공백으로 구분하여 전달하면, set 메서드에 의해 firstName과lastName data 속성에 새로운 값이 할당된다.
+
+ ```vue
+ ...
+   mounted() {
+     setTimeout(() => {
+       this.fullName = '영준 정';
+     }, 2000);
+   },
+ ...
+ ```
+
+실제로 set 메서드가 제대로 작동하는지 확인해보자. 위 코드를 추가해서 컴포넌트가 마운트된 후 약간의 텀을 두고 fullName Computed 속성에 새로운 값을 할당해보도록 하겠다.
+
+![vue-prac-Chrome-2022-06-08-15-12-26](md-images/vue-prac-Chrome-2022-06-08-15-12-26.gif)
+
+정상적으로 작동한다.
+
 ## Watch 속성
 
 watch 속성은 특정 데이터의 변화를 감지하여 자동으로 특정 로직을 수행해주는 속성이다.

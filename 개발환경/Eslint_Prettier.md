@@ -111,7 +111,7 @@ extension 메뉴에서 Prettier을 검색해 설치해준다. 그리고 .prettie
 #### Plugin 방법
 
 ```bash
-npm install eslint-plugin-prettier --save-dev 
+npm install prettier eslint-plugin-prettier --save-dev 
 ```
 
 ```json
@@ -125,7 +125,7 @@ npm install eslint-plugin-prettier --save-dev
 }
 ```
 
-다음과 같이 플러그인을 설치하고 이를 ESLint에 적용시키면 된다.
+위와 같이 prettier와 prettier 관련 플러그인을 설치하고 이를 ESLint에 적용시키면 된다.
 
 하지만 이 방법은 포매팅과 관련된 ESLint 규칙이 없을 때 정상적으로 작동한다. 다시 말하면, Prettier의 포매팅 규칙과 ESLint의 포매팅 규칙이 충돌할 수도 있다는 것이다. 따라서 **eslint-config-prettier**를 통해 ESLint 포매팅 규칙들을 모두 비활성화하는 것이 좋다.
 

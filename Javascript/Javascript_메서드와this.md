@@ -24,15 +24,16 @@ function sayHi() {
 user.f = sayHi;
 admin.f = sayHi;
 
-// 'this'는 '점(.) 앞의' 객체를 참조하기 때문에
-// this 값이 달라짐
+// 'this'는 메서드를 호출할 때 사용한 객체를 나타낸다.
 user.f(); // John  (this == user)
 admin.f(); // Admin  (this == admin)
 ```
 
 ### this가 없는 화살표 함수
 
-화살표 함수는 일반 함수와는 달리 ‘고유한’ `this`를 가지지 않는다. 화살표 함수에서 `this`를 참조하면, 화살표 함수가 아닌 ‘평범한’ 외부 함수에서 `this` 값을 가져온다.
+JavaScript에서는 어떤 식별자(변수)를 찾을 때 현재 환경에서 그 변수가 없으면 바로 상위 환경을 검색한다. 그렇게 점점 상위 환경으로 타고 타고 올라가다가 변수를 찾거나 가장 상위 환경에 도달하면 그만두게 된다.
+
+화살표 함수에서의 this 바인딩 방식도 이와 유사하다. **화살표 함수에는 this라는 변수 자체가 존재하지 않기 때문에 그 상위 환경에서의 this를 참조하게 된다.**
 
 ```javascript
 let user = {
@@ -45,6 +46,8 @@ let user = {
 
 user.sayHi(); // Elio
 ```
+
+위 예제의 this는 sayHi()의 this를 참조한다. sayHi()는 user객체의 메서드로 sayHi()의 this는 user객체가 된다. 따라서 this.firstName은 "Elio"를 참조하게 되는 것이다. 
 
 ## 과제1
 

@@ -26,8 +26,6 @@
 
 - ### [JWT](./JWT)
 
-- ### [Linux](./Linux)
-
 - ### [Markdown](./Markdown)
 
 - ### [Network](./Network)

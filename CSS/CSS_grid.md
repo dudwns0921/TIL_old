@@ -235,7 +235,7 @@ grid item에 적용하는 속성으로 각 셀의 영역을 지정한다.
 }
 ```
 
-![grid_ex2](C:\Users\User\Desktop\TIL\Web\CSS\md-images\grid_ex2.jpg)    
+![grid_ex2](.\md-images\grid_ex2.jpg)    
 
 ### span
 
