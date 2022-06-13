@@ -70,7 +70,7 @@ new Vue({
 ### 인수 사용 가능
 
 ```javascript
-{{ message | filterA('arg1', arg2) }}
+{{ message | filterA(arg2, arg3) }}
 ```
 
 filter는 자바스크립트 함수이기 때문에 인수를 가질 수 있다. 이 때 filter의 첫 번째 인수의 값은 무조건 해당 필터를 적용한 변수가 된다. 이 경우에는 message가 첫 번째 인수로 전달된다. 그 다음에 순서대로 2번째, 3번째 인수가 전달된다.

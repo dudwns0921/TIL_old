@@ -8,4 +8,6 @@
 
 - ## [타입스크립트 Union](./Typescript_Union.md)
 
+- ## [타입스크립트 타입 단언](./Typescript_TypeAssertions.md)
+
   
