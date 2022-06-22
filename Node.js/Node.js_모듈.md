@@ -12,6 +12,10 @@
 
  Node.js는 사실상 모듈 시스템의 사실상 표준인 [CommonJS](http://www.commonjs.org/)를 채택하였고 현재는 독자적인 진화를 거쳐 CommonJS과 100% 동일하지는 않지만 기본적으로 CommonJS 방식을 따르고 있다. 따라서 Node.js 환경에서는 파일별로 독립적인 파일 스코프를 갖는다.
 
+## 🚀 Further Study
+
+[CommonJS, AMD, 그리고 UMD란?](../Javascript/Javascript_CommonJS_AMD_UMD.md)
+
 ## 2. export 키워드
 
  모듈은 독자적인 모듈 스코프를 갖는다. 따라서 모듈 내부에서 선언한 모두 식별자는 기본적으로 해당 모듈 내부에서만 참조할 수 있다. 이 식별자를 외부에 공개하여 다른 모듈들이 재사용할 수 있게 하려면 export 키워드를 사용한다.

@@ -74,7 +74,9 @@ npm init @eslint/config
 
 #### 적용 결과
 
-![](md-images/2022-04-25-14-41-37-image.png)위에서 single quote를 사용하겠다고 설정했기 때문에 double quotes를 사용하면 다음과 같이 에러 메시지를 확인할 수 있다.
+![](md-images/2022-04-25-14-41-37-image.png)
+
+위에서 single quote를 사용하겠다고 설정했기 때문에 double quotes를 사용하면 다음과 같이 에러 메시지를 확인할 수 있다.
 
 ### Prettier 적용하기
 

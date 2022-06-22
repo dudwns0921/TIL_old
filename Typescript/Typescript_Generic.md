@@ -107,6 +107,3 @@ Generic은 유추한 타입들을 바탕으로 call signature을 작성한다. �
 # :books:참고자료
 
 노마드코더 강의
-
-
-
