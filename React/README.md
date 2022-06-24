@@ -24,3 +24,9 @@
 
 - ## [React docs event](./React_docs_event.md)
 
+- ## [React docs Conditional Rendering](./react_Conditional_Rendering.md)
+
+- ## [React docs key](./React_docs_key.md)
+
+  
+

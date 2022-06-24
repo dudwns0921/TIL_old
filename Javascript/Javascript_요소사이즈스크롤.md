@@ -70,17 +70,11 @@ ball.style.right = `${Math.round(
 
 2. ball 객체의 프로퍼티 값이 갱신됨
 
-
-
 ## 챕터 : 브라우저 창 사이즈와 스크롤
 
 ### 기하 프로퍼티:
 
 - 사용자 눈에 보이는 문서(콘텐츠가 실제 보여지는 영역)의 너비와 높이: `document.documentElement.clientWidth/clientHeight`
-
-- 스크롤에 의해 가려진 영역을 포함한 문서 전체의 너비와 높이:
-  
-  `let scrollHeight = Math.max(   document.body.scrollHeight, document.documentElement.scrollHeight,   document.body.offsetHeight, document.documentElement.offsetHeight,   document.body.clientHeight, document.documentElement.clientHeight );`
 
 ## :bulb:Tip
 
