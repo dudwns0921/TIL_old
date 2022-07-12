@@ -41,10 +41,6 @@ function handletheClick() {
 
 3. classList.toggle 함수는 인수로 전달한 클래스가 있고 없고에 따라 true와 false를 반환하는데, 이에 따라 버튼의 텍스트를 바꾼다.
 
-### 과제2
-
-### Move the ball across the field
-
 ### 과제3
 
 ### Create a sliding menu
