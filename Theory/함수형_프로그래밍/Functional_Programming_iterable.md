@@ -74,7 +74,7 @@ for (const a of iterable) {
 // 4
 ```
 
-정상적으로 for...of문으로 순회가 되는 것을 확인할 수 있다. 하지만 이 이터러블은 well-formed 이터러블이라고 할 수 없다. 이터러블인 자기 자신을 반환하는 symbol.iterator 함수를 가지고 있을 때 well-formed iterable이라고 할 수 있다.
+정상적으로 for...of문으로 순회가 되는 것을 확인할 수 있다. 하지만 이 이터러블은 well-formed 이터러블이라고 할 수 없다. 반환하는 기본 반복자가 자기 자신을 반환하는 symbol.iterator 메서드를 가지고 있을 때 well-formed iterable이라고 할 수 있다.
 
 ### Well-formed iterable
 
