@@ -46,13 +46,13 @@ for (const a of arr) {
 
 **이터러블 이터레이터 프로토콜** : 이터러블을 for of 문, 전개 연산자 등과 함께 동작하도록 한 규약
 
-**이터러블** : 이터레이터를 리턴하는 Symbol.iterator()을 가진 값
+**이터러블** : 기본 반복자(default iterator)를 리턴하는 Symbol.iterator()을 가진 값
 
 **이터레이터** : {value, done} 객체를 리턴하는 next() 를 가진 값
 
 ___
 
-이터러블이 되기 위해서는 객체의 기본 반복자(default iterator)를 반환하는 메서드인 Symbol.iterator()를 가지고 있어야 한다. 위의 내용들을 참고해 이터러블을 만들어보겠다.
+이터러블이 되기 위해서는 객체의 이터레이터를 반환하는 메서드인 Symbol.iterator()를 가지고 있어야 한다. 위의 내용들을 참고해 이터러블을 만들어보겠다.
 
 ```js
 const iterable = {
@@ -74,7 +74,7 @@ for (const a of iterable) {
 // 4
 ```
 
-정상적으로 for...of문으로 순회가 되는 것을 확인할 수 있다. 하지만 이 이터러블은 well-formed 이터러블이라고 할 수 없다. 반환하는 기본 반복자가 자기 자신을 반환하는 symbol.iterator 메서드를 가지고 있을 때 well-formed iterable이라고 할 수 있다.
+정상적으로 for...of문으로 순회가 되는 것을 확인할 수 있다. 하지만 이 이터러블은 well-formed 이터러블이라고 할 수 없다. 반환하는 이터레이터가 자기 자신을 반환하는 symbol.iterator 메서드를 가지고 있을 때 well-formed iterable이라고 할 수 있다.
 
 ### Well-formed iterable
 
