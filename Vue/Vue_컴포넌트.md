@@ -65,7 +65,7 @@ export default {
 
  Vue.js는 대소문자를 섞어 쓰는 PascalCase와 소문자 중간에 대시를 넣어 구분하는 kebab-case를 지원한다. 따라서 Todo로 등록한 컴포넌트는 todo로 사용 가능하고, 위의 경우에는 HeaderComponent 대신에 header-component로 사용 가능한 것이다.
 
-## 🔃컴포넌트 통신
+## 🔃부모-자식 컴포넌트간 통신
 
 뷰 컴포넌트는 각각 고유한 데이터 유효 범위를 갖는다. 따라서, 컴포넌트 간에 데이터를 주고 받기 위해선 아래와 같은 규칙을 따라야 한다.
 
@@ -73,7 +73,7 @@ export default {
 
 ## Props
 
-Props 속성은 컴포넌트 간에 데이터를 전달할 수 있는 컴포넌트 통신 방법이다. 프롭스 속성을 기억할 때는 상위 컴포넌트에서 하위 컴포넌트로 내려보내는 데이터 속성으로 기억하면 쉽다.
+Props 속성은 컴포넌트 간에 데이터를 전달할 수 있는 컴포넌트 통신 방법이다. Props 속성을 기억할 때는 부모 컴포넌트에서 자식 컴포넌트로 내려보내는 데이터 속성으로 기억하면 쉽다.
 
 ```html
 <!--부모 컴포넌트-->
@@ -322,8 +322,24 @@ export default {
 
 정상적으로 작동한다.
 
-> # :books:참고자료
->
-> [Props — Vue.js](https://kr.vuejs.org/v2/guide/components-props.html#Prop-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%82%AC)
->
-> [Components | Cracking Vue.js](https://joshua1988.github.io/vue-camp/vue/components.html#%E1%84%8F%E1%85%A5%E1%86%B7%E1%84%91%E1%85%A9%E1%84%82%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3-%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC-%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B3-%E1%84%92%E1%85%A7%E1%86%BC%E1%84%89%E1%85%B5%E1%86%A8)
+## 비 부모-자식 컴포넌트간 통신
+
+때로는 두 컴포넌트가 서로 통신 할 필요가 있지만 서로 부모/자식이 아닐 수도 있다. 간단한 시나리오에서는 비어있는 Vue 인스턴스를 중앙 이벤트 버스로 사용할 수 있다.
+
+```js
+var bus = new Vue()
+
+// 컴포넌트 A의 메서드
+bus.$emit('id-selected', 1)
+
+// 컴포넌트 B의 created hook
+bus.$on('id-selected', function (id) {
+  console.log(id) // 1
+})
+```
+
+# :books:참고자료
+
+- [Props — Vue.js](https://kr.vuejs.org/v2/guide/components-props.html#Prop-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%82%AC)
+- [Components | Cracking Vue.js](https://joshua1988.github.io/vue-camp/vue/components.html#%E1%84%8F%E1%85%A5%E1%86%B7%E1%84%91%E1%85%A9%E1%84%82%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3-%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC-%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B3-%E1%84%92%E1%85%A7%E1%86%BC%E1%84%89%E1%85%B5%E1%86%A8)
+- https://joshua1988.github.io/vue-camp/vue/components.html#%E1%84%8F%E1%85%A5%E1%86%B7%E1%84%91%E1%85%A9%E1%84%82%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3-%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC-%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B3-%E1%84%92%E1%85%A7%E1%86%BC%E1%84%89%E1%85%B5%E1%86%A8)
