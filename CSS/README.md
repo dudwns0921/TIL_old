@@ -17,3 +17,5 @@
 - ## [CSS border-image 활용하기](./CSS_borderImage.md)
 
 - ## [CSS Google Conference 2022](./CSS_Google_Conference_2022.md)
+
+- ## [CSS 긴 텍스트 처리](./CSS_긴_텍스트_처리.md)
