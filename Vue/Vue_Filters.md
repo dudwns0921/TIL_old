@@ -32,7 +32,7 @@ new Vue({
 
 ## 필터 등록 패턴
 
-위와 같이 `filters` 속성을 이용하여 각 컴포넌트에 필터를 등록하는 방법도 있지만, 실제로는 대부분 filters.js 파일을 별도로 분리하여 사용합니다. 아래와 같이 말이죠.
+위와 같이 `filters` 속성을 이용하여 각 컴포넌트에 필터를 등록하는 방법도 있지만, 실제로는 대부분 filters.js 파일을 별도로 분리하여 사용한다.
 
 ```javascript
 // filters.js
@@ -107,4 +107,4 @@ app.config.globalProperties.$filters = {
 </template>
 ```
 
-이 접근방식에서는 computed 속성이 아닌 methods만 사용할 수 있습니다. 후자는 개별 컴포넌트의 컨텍스트에서 정의된 경우에만 의미가 있다.
+이 접근방식에서는 computed 속성이 아닌 methods만 사용할 수 있다. 후자는 개별 컴포넌트의 컨텍스트에서 정의된 경우에만 의미가 있다.

@@ -75,7 +75,7 @@ use를 통해 라우터를 사용한 컴포넌트에서 router-view 태그를 �
 
 ## 라우터 링크
 
-사용자에게 라우팅 된 경로로 이동하게끔 앵커태그를 생성하는 속성이다. `router-link`속성을 통해 앵커 태그 기능을 수행하게한다.
+사용자에게 라우팅 된 경로로 이동하게끔 앵커와 같은 역할을 하는 태그이다. 사용법은 아래와 같다.
 
 ```html
 <router-link to="/">Home</router-link>
@@ -95,28 +95,92 @@ use를 통해 라우터를 사용한 컴포넌트에서 router-view 태그를 �
 </style>
 ```
 
-## 코드 스플리팅
+## Programmatic Navigation
 
-SPA는 웹 사이트의 전체 페이지를 하나의 페이지에 담아 동적으로 화면을 바꿔가며 표현하는 애플리케이션이다. SPA의 단점은 최초에 전체 페이지를 모두 받아오기 때문에 최초 로딩 시간이 오래 걸린다는 점이다. 이러한 단점을 코드 스플리팅을 통해 해결할 수 있다. 
+선언적으로 `router-link`태그를 사용하는 방법 외에 프로그래밍적으로 라우터 인스턴스의 메서드를 사용해서 다른 경로로 이동하게끔 할 수 있다.
+
+### :bulb:TIP 
+
+Vue 인스턴스 안에서 라우터 인스턴스에 접근하기 위해서는 `$router`를 사용해야 한다. 따라서 push는 다음과 같이 사용할 수 있다.
+
+`this.$router.push`
+
+### Push
+
+다른 URL로 이동하기 위해서는 `router.push`를 사용하면 된다. 이 메서드는 새로운 `entry`를 `history stack`에 추가한다. 그래서 사용자가 브라우저의 뒤로 가기 버튼을 누를 경우 그 전 URL 로 이동하게 된다.
+
+### Push 사용법
 
 ```js
-// src/router/index.js
+// literal string path
+router.push('/users/eduardo')
 
-...
-routes: [
-        {
-            path: '/login',
-            component: () => import ('@/views/LoginPage.vue'),
-        },
-        {
-            path: '/signup',
-            component: () => import ('@/views/SignupPage.vue'),
-        },
-    ]
-...
+// object with path
+router.push({ path: '/users/eduardo' })
+
+// with query, resulting in /register?plan=private
+router.push({ path: '/register', query: { plan: 'private' } })
+
+// with hash, resulting in /about#team
+router.push({ path: '/about', hash: '#team' })
 ```
 
-component의 LoginPage를 바로 넣는 게 아니라 화살표함수를 이용해서 코드 스플리팅을 한다. 이렇게 하면 최초에 모든 파일을 다 들고오지 않고 해당 url 로 이동했을 때 필요한 JS 파일을 그 때 그 때 들고 오게 된다. (다이나믹 임포트)
+### Replace
+
+`router.push`와 비슷하게 동작하지만, 한 가지 차이점이 있다. `router.replace` 메서드는 `history stack`에 새로운 `entry`를 추가하지 않는다. 이름과 같이 현재 `entry`를 대체한다.
+
+### 🤔생각해보기
+
+push와 replace의 차이를 알았지만 각각을 어디에 써야할지는 좀 더 고민해볼 문제라고 생각한다. 즉각적으로 떠오르는 건 로그인 후의 메인페이지로의 이동이다.
+
+- push의 경우
+  1. 로그인을 한다.
+  2. 메인페이지로 이동한다.
+  3. 뒤로가기 버튼을 누른다.
+  4. 로그인 페이지로 이동한다.
+
+- replace의 경우
+  1. 로그인을 한다.
+  2. 메인페이지로 이동한다.
+  3. 뒤로가기 버튼을 누른다.
+  4. 로그인 페이지 이전의 URL로 이동한다.
+
+개인적인 의견이지만, 로그인 후에 뒤로 가기를 눌렀을 때 다시 로그인 페이지가 나오는 건 흐름상 이상하다고 생각한다. 왜냐하면 대부분의 경우 로그인 후에는 회원가입이나 로그인 버튼을 없애 로그인 페이지로의 이동을 제한하기 때문이다. 그래서 로그인 후 메인페이지로 이동할 때는 `router.replace`를 쓰는 게 좀 더 자연스럽다고 생각했는데...
+
+네이버를 확인해보니 로그인 후 메인페이지에서 뒤로가기를 눌렀을 때 로그인 페이지로 넘어가는 걸 보아 `router.push`와 같이 `history stack`에 `entry`를 추가한 것으로 보인다. 조금 이상한 흐름같지만 문제가 될 부분은 아닌 거 같긴 하다. 그래서 일단은 특별한 경우가 아니라면 `router.push`를 사용하기로 했다.
+
+## Named Routes
+
+route에는 path와 더불어 name 속성을 제공해줄 수 있다. name 속성은 다음과 같은 장점을 가진다.
+
+- url 하드코딩 필요 없음
+- url 오타 방지
+- params에 대한 자동 인코딩 / 디코딩
+- 경로 순위 우회 가능
+
+```js
+const routes = [
+  {
+    path: '/user/:username',
+    name: 'user',
+    component: User
+  }
+]
+```
+
+```vue
+<router-link :to="{ name: 'user'}">
+  User
+</router-link>
+```
+
+named route를  router-link에 사용하기 위해서는 router-link의 to 속성에다가 route 객체를 전달해주면 된다. 
+
+```js
+router.push({ name: 'user'})
+```
+
+위와 같이 해당 route 객체를 push 메서드에 전달해 같은 결과를 얻을 수 있다.
 
 ## Navigation guard
 
@@ -154,38 +218,28 @@ next 함수 인자에 따라서 라우팅 허용 여부가 달라진다.
 
 주의할 점은 어떠한 경우에도 next()를 호출해야한다는 점이다. 호출되지 않을 경우 라우팅이 진행되지 않고 대기 상태에 빠진다.
 
-## Named Routes
+## 코드 스플리팅
 
-route에는 path와 더불어 name 속성을 제공해줄 수 있다. name 속성은 다음과 같은 장점을 가진다.
-
-- url 하드코딩 필요 없음
-- url 오타 방지
-- params에 대한 자동 인코딩 / 디코딩
-- 경로 순위 우회 가능
+SPA는 웹 사이트의 전체 페이지를 하나의 페이지에 담아 동적으로 화면을 바꿔가며 표현하는 애플리케이션이다. SPA의 단점은 최초에 전체 페이지를 모두 받아오기 때문에 최초 로딩 시간이 오래 걸린다는 점이다. 이러한 단점을 코드 스플리팅을 통해 해결할 수 있다. 
 
 ```js
-const routes = [
-  {
-    path: '/user/:username',
-    name: 'user',
-    component: User
-  }
-]
+// src/router/index.js
+
+...
+routes: [
+        {
+            path: '/login',
+            component: () => import ('@/views/LoginPage.vue'),
+        },
+        {
+            path: '/signup',
+            component: () => import ('@/views/SignupPage.vue'),
+        },
+    ]
+...
 ```
 
-```vue
-<router-link :to="{ name: 'user', params: { username: 'erina' }}">
-  User
-</router-link>
-```
-
-named route를  router-link에 사용하기 위해서는 router-link의 to 속성에다가 route 객체를 전달해주면 된다. 
-
-```js
-router.push({ name: 'user', params: { username: 'erina' } })
-```
-
-위와 같이 해당 route 객체를 push 메서드에 전달해 같은 결과를 얻을 수 있다.
+component의 LoginPage를 바로 넣는 게 아니라 화살표함수를 이용해서 코드 스플리팅을 한다. 이렇게 하면 최초에 모든 파일을 다 들고오지 않고 해당 url 로 이동했을 때 필요한 JS 파일을 그 때 그 때 들고 오게 된다. (다이나믹 임포트)
 
 # :books:참고자료
 
