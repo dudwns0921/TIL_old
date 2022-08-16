@@ -17,3 +17,5 @@
 - ## [Vue 트랜지션 & 애니메이션 3](./Vue_Transition&Animation3.md)
 - ## [Vue render 옵션](./Vue_render.md)
 - ## [Vue I18n](./Vue_I18n.md)
+- ## [Vue Plugin](./Vue_Plugin.md)
+- ## [Vue Vuetify](./Vue_Vuetify.md)

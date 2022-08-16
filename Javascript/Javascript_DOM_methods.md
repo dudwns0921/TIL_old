@@ -61,15 +61,9 @@ for (const elem of elements) {
 </script>
 ```
 
-> **가상 클래스도 사용할 수 있다.**
-> 
-> querySelectorAll에는 `:hover`나 `:active` 같은 CSS 선택자의 가상 클래스(pseudo-class)도 사용할 수 있다. `document.querySelectorAll(':hover')`을 사용하면 마우스 포인터가 위에 있는(hover 상태인) 요소 모두를 담은 컬렉션이 반환된다. 이때 컬렉션은 DOM 트리 최상단에 위치한 `<html>`부터 가장 하단의 요소 순으로 채워진다.
+**가상 클래스도 사용할 수 있다.**
 
-## 🤔 의문
-
-querySelectorAll에서 가상 클래스도 사용할 수 있다고 했는데, hover와 같이 사용자와의 상호작용이 필요한 클래스의 경우에는 무용지물이 아닌가라는 생각이 들었다. 왜냐하면 querySelectorAll은 정적인 컬렉션을 반환하기 때문이다. 중간에 어떤 변화가 있어도 컬렉션이 확정되면 변하지 않기 때문에 사용자와의 상호작용이 반영될 수 없다.
-
-물론 순서와 관련된 first-child 같은 가상 클래스는 사용할 수 있겠지만 그 외의 경우에는 어떤 의미가 있는지 의문이 든다. 
+querySelectorAll에는 `:hover`나 `:active` 같은 CSS 선택자의 가상 클래스(pseudo-class)도 사용할 수 있다. `document.querySelectorAll(':hover')`을 사용하면 마우스 포인터가 위에 있는(hover 상태인) 요소 모두를 담은 컬렉션이 반환된다. 이때 컬렉션은 DOM 트리 최상단에 위치한 `<html>`부터 가장 하단의 요소 순으로 채워진다.
 
 ### querySelector
 
