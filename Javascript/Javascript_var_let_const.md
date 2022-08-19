@@ -184,8 +184,6 @@ console.log(person); // {name:"Lee"}
 
 재할당이 필요하다면 나중에 변경해도 결코 늦지 않다.
 
-# 
-
 # :books:참고자료
 
 이웅모, 모던 자바스크립트 Deep Dive, 위키북스, 2020

@@ -22,10 +22,10 @@
 
 ```html
 <script>
-  // 변수 elem은 id가 'elem'인 요소를 참조합니다.
+  // 변수 elem은 id가 'elem'인 요소를 참조한다.
   elem.style.background = 'red';
 
-  // id가 elem-content인 요소는 중간에 하이픈(-)이 있기 때문에 변수 이름으로 쓸 수 없습니다.
+  // id가 elem-content인 요소는 중간에 하이픈(-)이 있기 때문에 변수 이름으로 쓸 수 없다.
   // 이럴 땐 대괄호를 사용해서 window['elem-content']로 접근하면 된다.
   window['elem-content'].style.background = 'blue';
 </script>
