@@ -34,6 +34,8 @@
 
 - ### [React](./React)
 
+- ### [Regex](./Regex)
+
 - ### [Reuse](./Reuse)
 
 - ### [Theory](./Theory)

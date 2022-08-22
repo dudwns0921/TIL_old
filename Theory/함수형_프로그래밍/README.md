@@ -8,3 +8,4 @@
 
 - ### [함수형 프로그래밍 이터러블](./Functional_Programming_iterable.md)
 
+- ### [함수형 프로그래밍 Map, Filter, Reduce](./Functional_Programming_Map&Filter&Reduce.md)

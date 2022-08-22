@@ -14,7 +14,7 @@
 
 #### 명령형 프로그래밍:
 
-```
+```js
 var fruits = ["apple","banana","watermellon","pear","peach"]
 fruitesOverFive = [];
 for(var i = 0; i< fruits.length; i++){
@@ -27,7 +27,7 @@ return fruitsOverFive;
 
 #### 선언형 프로그래밍:
 
-```
+```js
 var fruitsOverFive = fruits.filter((fruit) => fruit.length>5)
 ```
 
