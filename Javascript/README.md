@@ -47,3 +47,5 @@
 - ## [Lodash](./Javascript_Lodash.md)
 
 - ## [Closure](./Javascript_Closure.md)
+
+- ## [Vanilla JS로 애플리케이션 만들기](./Javascript_VanillaJS실습.md)

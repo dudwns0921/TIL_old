@@ -74,7 +74,9 @@ ball.style.right = `${Math.round(
 
 ### 기하 프로퍼티:
 
-- 사용자 눈에 보이는 문서(콘텐츠가 실제 보여지는 영역)의 너비와 높이: `document.documentElement.clientWidth/clientHeight`
+- 사용자 눈에 보이는 문서(콘텐츠가 실제 보여지는 영역)의 너비와 높이: 
+
+​	`document.documentElement.clientWidth/clientHeight`
 
 ## :bulb:Tip
 
