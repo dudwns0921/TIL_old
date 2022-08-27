@@ -1,5 +1,3 @@
 # Programmers
 
-- ## [Coding Test A to Z Javascript](./Coding_Test_A_to_Z_Javascript)
-
-- ## [문제풀이](./문제풀이)
+- ## [신고 결과 받기](./신고_결과_받기.md)
