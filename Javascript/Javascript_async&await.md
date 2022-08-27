@@ -37,7 +37,7 @@ async & await에서는 반환된 값을 변수에 할당할 수 있어 좀 더 �
 
 ## async & await 예외 처리
 
-async & await에서 예외를 처리하는 방법은 바로 try catch문을 활용하는 것이다. 프로미스에서 에러 처리를 위해 `.catch()`를 사용했던 것처럼 async에서는 `catch {}` 를 사용하시면 된다.
+async & await에서 예외를 처리하는 방법은 바로 try catch문을 활용하는 것이다. 프로미스에서 에러 처리를 위해 `.catch()`를 사용했던 것처럼 async에서는 `catch {}` 를 사용하면 된다.
 
 조금 전 코드에 바로 `try catch` 문법을 적용해보겠다.
 

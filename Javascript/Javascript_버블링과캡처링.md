@@ -82,10 +82,8 @@ form.onclick = function (event) {
     alert('target = ' + event.target.tagName + ', this=' + this.tagName);
     event.target.style.backgroundColor = '';
   }, 0);
-};![](C:\Users\220307\AppData\Roaming\marktext\images\2022-04-20-10-52-51-image.png)
+};
 ```
-
-![](C:\Users\220307\AppData\Roaming\marktext\images\2022-04-20-10-53-17-image.png)
 
 P를 클릭하게 되면 alert로 다음과 같은 메시지가 나온다.
 
