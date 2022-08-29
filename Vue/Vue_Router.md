@@ -149,6 +149,54 @@ push와 replace의 차이를 알았지만 각각을 어디에 써야할지는 �
 
 네이버를 확인해보니 로그인 후 메인페이지에서 뒤로가기를 눌렀을 때 로그인 페이지로 넘어가는 걸 보아 `router.push`와 같이 `history stack`에 `entry`를 추가한 것으로 보인다. 조금 이상한 흐름같지만 문제가 될 부분은 아닌 거 같긴 하다. 그래서 일단은 특별한 경우가 아니라면 `router.push`를 사용하기로 했다.
 
+## Dynamic Route Matching with Params
+
+`Router`를 만들다보면 특정한 패턴을 가진 `route`를 동일한 `component`에 매핑해야하는 경우가 많다. 예를 들어 유저 상세정보를 보여주는 페이지를 만든다고 하면, 화면에 렌더링하는 컴포넌트 자체는 동일해야 한다. 하지만 유저에 따라서 컴포넌트가 보여주는 데이터`ex)user ID`는 달라야 한다.  `Vue Router`에서는 이 문제를 `route`안에 있는 `dynamic segment`를 활용해 처리할 수 있으며, 이는 `params` 라고 불린다.
+
+```js
+const User = {
+  template: '<div>User</div>',
+}
+
+// these are passed to `createRouter`
+const routes = [
+  // dynamic segments start with a colon
+  { path: '/users/:id', component: User },
+]
+```
+
+`params`는 위와 같이 콜론으로 표시된다. 그리고 `route`가 일치하면 해당 `params`의 값이 `$route.params`에 노출된다. 이를 활용하면,
+
+```js
+const User = {
+  template: '<div>User {{ $route.params.id }}</div>',
+}
+```
+
+이렇게 페이지마다 다른 `user ID`를 보여줄 수 있게 된다.
+
+또한 동일한 `route`에 여러 개의 `params`를 추가할 수 있고, 이들은 `$route.params`에 상응하는 `field`에 매핑될 것이다.
+
+| pattern                        | matched path         | $route.params                        |
+| ------------------------------ | -------------------- | ------------------------------------ |
+| /users/:username               | /users/jun           | `{ username: 'jun' }`                |
+| /users/:username/posts/:postId | /users/jun/posts/123 | `{ username: 'jun', postId: '123' }` |
+
+## :bulb:Tip - params과 query
+
+위 내용을 정리하다가 `Vue Router` 공식 문서에서 아래 내용을 확인했다.
+
+> In addition to `$route.params`, the `$route` object also exposes other useful information such as `$route.query` (if there is a query in the URL)
+
+`params`와 `query` 모두 페이지 이동시 데이터를 전달한다는 점에서 거의 비슷하다고 느껴져 `params`에는 어떤 정보를 담고, `query`에는 어떤 정보를 담아야 하는지 고민이 되었다.
+
+먼저 `params`는 특정 resource를 식별하고 싶을 때 사용하고, `query`는 정렬이나 필터링을 할 때 사용하는 것이 좋다. 아래 예시를 확인해보자.
+
+```
+/users?occupation=programer  # 프로그래머인 사용자 목록을 가져온다.
+/users/jun  # 아이디가 jun인 사용자를 가져온다.
+```
+
 ## Named Routes
 
 route에는 path와 더불어 name 속성을 제공해줄 수 있다. name 속성은 다음과 같은 장점을 가진다.
@@ -246,3 +294,5 @@ component의 LoginPage를 바로 넣는 게 아니라 화살표함수를 이용�
 [Getting Started | Vue Router](https://router.vuejs.org/guide/)
 
 [Vue 라우터 개념 및 사용방법](https://jinyisland.kr/post/vue-router/)
+
+https://ryan-han.com/post/translated/pathvariable_queryparam/

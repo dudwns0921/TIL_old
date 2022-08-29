@@ -28,6 +28,25 @@ import Vue from 'vue'
 Vue.use(VueRouter)
 ```
 
+## Plugin 구현하기
+
+```js
+// ChartPlugin.js
+import Chart from 'chartjs';
+
+export default {
+  install(Vue, options) {
+    Vue.prototype.ChartJS = Chart;
+  }
+}
+```
+
+위 코드는 `chartjs`라는 외부 라이브러리를 `npm` 방식으로 프로젝트에 설치한 후 해당 라이브러리를 플러그인으로 사용하는 코드이다. 차트 라이브러리를 불러와 `Chart`라는 변수에 담고, 뷰 플러그인을 설치(install)할 때 뷰의 프로토타입 속성으로 해당 변수를 연결하는 코드이다. 따라서 아래와 같이 `Vue.use()`메서드를 통해 플러그인을 설치하면 컴포넌트에서 매번 차트 라이브러리를 불러오지 않고도 사용할 수 있다.
+
+## :bulb:Tip - 플러그인 변수명
+
+플러그인 변수명은 `$_`가 좋다. 뷰 라이브러리 내부적으로 사용하는 private 변수는 `_`를 사용하고 있고, 사용자에게 노출시키는 인스턴스 관련 속성은 `$`를 사용하고 있기 때문이다. 이 내용은 뷰 공식 문서의 스타일 가이드에서 찾아볼 수 있다.
+
 # :books:참고자료
 
 https://v2.vuejs.org/v2/guide/plugins.html
