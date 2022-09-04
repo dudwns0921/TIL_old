@@ -24,8 +24,6 @@
 
 - ## [브라우저 환경에서의 자바스크립트](./Javascript_브라우저_환경.md)
 
-- ## [DOM Methods](./Javascript_DOM_methods.md)
-
 - ## [DOM Node](./Javascript_DOM_Node.md)
 
 - ## [모던자바스크립트 : 문서 수정하기 과제](./Javascript_문서수정하기_assignments.md)
@@ -51,3 +49,5 @@
 - ## [Vanilla JS로 애플리케이션 만들기](./Javascript_VanillaJS실습.md)
 
 - ## [Debounce & Throttle](./Javascript_debounce&throttle.md)
+
+- ## [Console](./Javascript_console.md)
