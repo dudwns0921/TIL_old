@@ -14,8 +14,6 @@
 
 - ### [Database](./Database)
 
-- ### [DevTools](./DevTools)
-
 - ### [Express](./Express)
 
 - ### [Git](./Git)

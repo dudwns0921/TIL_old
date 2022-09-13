@@ -21,14 +21,14 @@ console.warn('경고');
 console.error('에러');
 ```
 
-![image-20220904093718153](C:\Users\User\Desktop\TIL\Javascript\md-images\image-20220904093718153.png)	
+![image-20220904093718153](.\md-images\image-20220904093718153.png)	
 
 `warn`이나 `error`는 확실하게 디자인 차이가 나지만, `info`는 `log`와 디자인에서도 차이가 없다. `info`만의 특징은 아래와 같다.
 
 - 정보성 메시지를 전달할 때 사용한다.
 - `Firefox` 브라우저에서는 아래와 같이 메시지와 함께  `i`아이콘이 출력된다.
 
-![image-20220904094456086](C:\Users\User\Desktop\TIL\Javascript\md-images\image-20220904094456086.png)	
+![image-20220904094456086](.\md-images\image-20220904094456086.png)	
 
 ### 객체 출력할 때 주의점
 
@@ -41,7 +41,7 @@ obj.a = 1;
 console.log(obj);
 ```
 
-![image-20220904100024726](C:\Users\User\Desktop\TIL\Javascript\md-images\image-20220904100024726.png)	
+![image-20220904100024726](.\md-images\image-20220904100024726.png)	
 
 위의 예시를 보면 `a`에 1을 할당하기 전에 출력했음에도 `a:1`이 객체 안에 들어있음을 확인할 수 있다. 코드가 이렇게 가까이 있을 때는 변경사항이 업데이트되었다고 생각할 수 있겠지만, 그렇지 않다면 굉장히 혼란스러울 수 있다.
 
@@ -59,7 +59,7 @@ obj.a = 1;
 console.log(Object.keys(obj).length);
 ```
 
-![image-20220904100956798](C:\Users\User\Desktop\TIL\Javascript\md-images\image-20220904100956798.png)	
+![image-20220904100956798](.\md-images\image-20220904100956798.png)	
 
 이처럼 객체가 아닌 값을 출력할 경우, 객체가 변경되는 것과 상관없이 객체와 관련된 정확한 값을 확인할 수 있다. 
 
@@ -73,7 +73,7 @@ console.log(f);
 console.dir(f);
 ```
 
-![image-20220904105248088](C:\Users\User\Desktop\TIL\Javascript\md-images\image-20220904105248088.png)	
+![image-20220904105248088](.\md-images\image-20220904105248088.png)	
 
 ###  Count
 
@@ -89,7 +89,7 @@ get();
 get();
 ```
 
-![image-20220904112226661](C:\Users\User\Desktop\TIL\Javascript\md-images\image-20220904112226661.png)	
+![image-20220904112226661](.\md-images\image-20220904112226661.png)	
 
 예시에서 볼 수 있듯이 api 요청이나 함수 호출이 몇 번 이루어졌는지 등을 확인할 때 유용할 것이라고 생각한다.
 
@@ -109,7 +109,7 @@ console.log(cnt);
 console.timeEnd('timer');
 ```
 
-![image-20220904113445491](C:\Users\User\Desktop\TIL\Javascript\md-images\image-20220904113445491.png)	
+![image-20220904113445491](.\md-images\image-20220904113445491.png)	
 
 # :books:참고자료
 
