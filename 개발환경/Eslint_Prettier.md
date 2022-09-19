@@ -137,7 +137,7 @@ npm install eslint-config-prettier --save-dev
 
 ```json
 {
-  "extends": ["plugin:prettier/recommended"]
+  "extends": [d]
 }
 ```
 
