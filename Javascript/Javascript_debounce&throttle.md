@@ -123,7 +123,7 @@ function debounce(cb, delay = 1000) {
 
 그러면 이제 실제 실행 화면을 확인해보자.
 
-![ezgif.com-gif-maker (1)](md-images/ezgif.com-gif-maker (1).gif)	
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/83502672/191139932-fa2989bf-9b3e-4020-be08-02889a5a4f39.gif)
 
 ![image-20220825122511215](md-images/image-20220825122511215.png)	
 
@@ -241,7 +241,7 @@ function throttle(cb, delay = 1000) {
 
 ___
 
-![ezgif.com-gif-maker (2)](md-images/ezgif.com-gif-maker (2).gif)	
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/83502672/191139957-4ee1779e-da19-45c3-bb0e-635b34518961.gif)
 
 페이지의 처음부터 끝까지 스크롤하는 동안 `Throttle`을 적용하지 않았을 때는 스크롤이 `footer`로부터 얼마나 떨어져 있는지 계산하는 연산이 총 67번 수행됐고, `Throttle`을 적용했을 경우에는 단 2번만 수행됐다. 
 
