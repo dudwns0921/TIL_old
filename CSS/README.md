@@ -19,3 +19,6 @@
 - ## [CSS Google Conference 2022](./CSS_Google_Conference_2022.md)
 
 - ## [CSS 긴 텍스트 처리](./CSS_긴_텍스트_처리.md)
+
+- ## [CSS inset&object-fit](./CSS_inset&object-fit.md)
+
