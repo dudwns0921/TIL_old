@@ -1,5 +1,5 @@
 # Stylelint
 
-- ## [Stylelint 기초](./Stylelint_basic.md)
+- ## [Stylelint 기초](./Stylelint_Basic.md)
 
   
