@@ -12,7 +12,7 @@
 
 `getter` 함수를 전달받아 `getter`에서 반환된 값에 대한 읽기 전용인  `ref`객체를 반환한다. `get`과 `set` 함수가 있는 객체를 전달받아 `writable`한 `ref` 객체를 만들 수 있다. 여기서 `writable`이란 값을 정의할 수 있다라는 의미로 받아들이면 된다. 
 
-#### readonly computed ref:
+#### creating readonly computed ref:
 
 ```js
 const count = ref(1)
@@ -25,7 +25,7 @@ plusOne.value++ // error
 
 위에서 말했듯이, `computed`는 `ref` 객체를 반환한다. 따라서 위의 예시에서 `plusOne`은 실제로는 `ref(2)`와 같은 것이다. 따라서 해당 값에 접근하려면 `value` 프로퍼티를 사용해야 한다.
 
-#### writable computed ref:
+#### creating writable computed ref:
 
 ```js
 const count = ref(1)
@@ -70,3 +70,71 @@ export default {
 
 ### reactive()
 
+반응형 객체의 `proxy`를 반환한다. 여기서 `proxy`란 원본 객체를 가상화함으로써 기본적인 동작에 대한 재정의가 가능하게끔 하는 객체이다. 좀 더 이해하기 쉽도록 먼저 `proxy`라는 단어의 뜻을 알아보자.
+
+`proxy`는 **대리자**라는 뜻을 갖고 있다. 이 뜻에 비춰보자면, `proxy`란 원본 객체에 직접 접근하지 않고 객체에 대한 작업을 하기 위한 객체로 생각된다. 
+
+#### creating a reactive obejct:
+
+```js
+const obj = reactive({ count: 0 })
+```
+
+#### Ref unwrapping:
+
+```js
+const count = ref(1)
+const obj = reactive({ count })
+
+// ref will be unwrapped
+console.log(obj.count === count.value) // true
+
+// it will update `obj.count`
+count.value++
+console.log(count.value) // 2
+console.log(obj.count) // 2
+
+// it will also update `count` ref
+obj.count++
+console.log(obj.count) // 3
+console.log(count.value) // 3
+```
+
+`reactive` 객체는 속성들 중 값이 `ref` 객체에 해당하는 경우에는 반응성을 유지하기 위해 `proxy` 객체로 감싸지 않는다. 즉, `obj.count`와 `count.value`는 동일한 값을 참조하고 있다. 따라서 `count.value`의 값을 변경하거나 `obj.count`를 변경하면 양쪽의 값이 모두 변하는 것이다.
+
+```js
+const count = { value: 1 }
+const obj = reactive({ count })
+
+// ref will be wrapped
+console.log(obj.count === count) // false
+```
+
+위의 예시처럼 `ref` 객체가 아닌 `count`가 일반 객체일 경우 `proxy` 객체로 감싸져 서로 다른 값을 참조해 둘을 비교했을 때 `false`가 나오는 걸 확인할 수 있다.
+
+### 🥊ref() vs. reactive()
+
+일반적으로 원시 타입을 반응형으로 만들 때는  `ref`를 사용하고, 객체를 반응형으로 만들 때는 `reactive`를 사용하는 것으로 알려져 있다. 원시 타입을 반응형으로 만들 때 `ref`를 사용하는 것은 맞지만 객체를 반응형으로 만들 때는 `ref`, `reactive` 어느 것을 사용해도 무방하다. 아래 예시를 확인해보자.
+
+```js
+const refState = ref({ msg: 'Hello World' })
+console.log(refState.value)
+
+const reactiveState = reactive({ msg: 'Hello World' })
+console.log(reactiveState)
+```
+
+![image-20220928124024354](md-images/image-20220928124024354.png)	
+
+예시와 같이 `ref`와 `reactive`로 반응형 객체를 만들었을 때 둘 다 동일한 반응형 `proxy` 객체를 반환하고 있음을 알 수 있다. 그래서 어떤 것을 사용해도 상관은 없지만, 코드 가독성을 위해 한 가지만을 선택해서 사용하는 게 좋다. 어떤 것을 선택할지는 개인의 선택이지만 필자는 아래와 같은 이유로 `ref`를 사용한다.
+
+- `ref`의 `value` 프로퍼티가 반응형 데이터라는걸 명확하게 해주어서 가독성 및 유지보수에 좋음
+- `ref`가 `reactive`보다 `API`가 간결함
+
+# :books:참고자료
+
+https://vuejs.org/api/reactivity-core.html
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
+
+https://www.youtube.com/watch?time_continue=1355&v=Z0OG00YQeMg&feature=emb_logo
