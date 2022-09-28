@@ -38,4 +38,8 @@
 
 - ## [Vue refs](./Vue_refs.md)
 
+- ## [Vue Composition API](./Vue_CompositionAPI.md)
+
+- ## [Vue Reactivity : Core](./Vue_ReactivityAPI.md)
+
   
