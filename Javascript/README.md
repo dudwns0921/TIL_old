@@ -48,6 +48,4 @@
 
 - ## [Vanilla JS로 애플리케이션 만들기](./Javascript_VanillaJS실습.md)
 
-- ## [Debounce & Throttle](./Javascript_debounce&throttle.md)
-
 - ## [Console](./Javascript_console.md)

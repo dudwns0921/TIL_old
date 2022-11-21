@@ -4,8 +4,6 @@
 
 ## 목록
 
-- ### [Algorithm](./Algorithm)
-
 - ### [Axios](./Axios)
 
 - ### [Babel](./Babel)

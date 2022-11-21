@@ -17,7 +17,7 @@ function logText(text: string | number) {
 ```typescript
 // any를 사용하는 경우
 function getAge(age: any) {
-  age.toFixe(); // 에러 발생, age의 타입이 any로 추론되기 때문에 숫자 관련된 API를 작성할 때 코드가 자동 완성되지 않는다.
+  age.toFixed(); // 에러 발생, age의 타입이 any로 추론되기 때문에 숫자 관련된 API를 작성할 때 코드가 자동 완성되지 않는다.
   return age;
 }
 
