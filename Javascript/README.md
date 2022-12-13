@@ -49,3 +49,5 @@
 - ## [Vanilla JS로 애플리케이션 만들기](./Javascript_VanillaJS실습.md)
 
 - ## [Console](./Javascript_console.md)
+
+- ## [Class](./Javascript_Class.md)

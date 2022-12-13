@@ -154,6 +154,6 @@ props도 동일한 특징을 지닌다는 걸 확인할 수 있다.
 
 # :books:참고자료
 
-https://reactrouter.com/docs/en/v6/hooks/use-outlet-context
+https://reactrouter.com/en/6.4.5
 
 https://velog.io/@daeseongkim/Redux%EC%9D%98-3%EA%B0%80%EC%A7%80-%EC%9B%90%EC%B9%99
