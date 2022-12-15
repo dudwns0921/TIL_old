@@ -12,9 +12,7 @@ useParams hook은 dynamic params의 객체를 반환한다. 가령 특정 페이
 
 # :books:참고자료
 
-
-
-
+https://reactrouter.com/en/main
 
 
 

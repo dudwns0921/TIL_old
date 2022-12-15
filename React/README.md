@@ -30,3 +30,7 @@
 
 - ## [React docs Form](./React_docs_Form.md)
 
+- ## [React react router dom params](./react-router-dom_params.md)
+
+- ## [React react router dom navigate](./react-router-dom_navigate.md)
+
