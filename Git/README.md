@@ -13,3 +13,7 @@
 - ## [Git 3-way-merge](./Git_3-Way-Merge.md)
 
 - ## [Git Release&Tag](./Git_Release&Tag.md)
+
+- ## [Clone과 Fork의 차이](./Git_Clone_Fork.md)
+
+- ## [Upstream과 Downstream](./Git_Upstream_Downstream.md)
