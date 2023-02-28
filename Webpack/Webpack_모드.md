@@ -61,12 +61,9 @@ if (process.env.NODE_ENV === "production") {
 
 이런 모드 속성이 생긴 데에는 Parcel의 등장과 관련이 있다. Parcel은 Webpack에 비해 매우 늦게 나왔지만 Webpack 보다 빠르고 설정이 필요 없는 부분에서 장점이 있다. 이러한 Parcel과 경쟁하기 위해 Webpack에서 mode 속성이 추가된 버전 업을 좀 빠르게 진행했다고 한다.
 
-
-
 # :books:참고자료
 
 [Webpack 모드 - Webpack 러닝 가이드](https://yamoo9.gitbook.io/webpack/webpack/config-webpack-dev-environment/webpack-mode)
 
 인프런 - 프론트엔드 개발자를 위한 웹팩 강의 내용
-
 

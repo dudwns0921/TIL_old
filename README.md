@@ -10,6 +10,8 @@
 
 - ### [CSS](./CSS)
 
+- ### [C](./C)
+
 - ### [Database](./Database)
 
 - ### [Eslint](./Eslint)

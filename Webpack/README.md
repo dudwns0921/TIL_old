@@ -11,3 +11,5 @@
 - ## [웹팩 개발자 도구](./Webpack_개발자도구.md)
 
 - ## [웹팩 튜토리얼](./Webpack_튜토리얼.md)
+
+- ## [ts loader와 babel loader](./Webpack_ts_loader_babel_loader.md)
