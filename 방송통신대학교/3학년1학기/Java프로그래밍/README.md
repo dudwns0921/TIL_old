@@ -2,3 +2,5 @@
 
 - ## [1강. Java와 객체지향 프로그래밍](./chapter1.md)
 
+- ## [2강. Java 기본 문법](./chapter2.md)
+
