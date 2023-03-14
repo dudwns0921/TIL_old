@@ -6,6 +6,8 @@
 
 - ### [Axios](./Axios)
 
+- ### [Browser](./Browser)
+
 - ### [Babel](./Babel)
 
 - ### [CSS](./CSS)
