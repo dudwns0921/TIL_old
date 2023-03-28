@@ -7,3 +7,5 @@
 - ## [3강. HTML 요소: 미디어, 시멘틱 요소](./chapter3.md)
 
 - ## [4강. HTML 요소: 웹 폼](./chapter4.md)
+
+- ## [5강. CSS: 개요, 선택자, 색상](./chapter5.md)
