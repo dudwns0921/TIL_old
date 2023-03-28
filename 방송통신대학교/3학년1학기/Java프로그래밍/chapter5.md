@@ -92,6 +92,8 @@
 - 예시
   - class MovablePoint implements Movable {...}
   - class 자식 클래스 extends
+<<<<<<< HEAD
+=======
 
 #### 디폴트 메소드
 
@@ -166,3 +168,4 @@
 
 #### 클래스를 상속받는 익명 클래스
 
+>>>>>>> 9c02871ec950cad5c07ca9182224f31987ab164c
