@@ -29,7 +29,7 @@
     - get
     - post
   - name
-    - 폼 이
+    - 폼 이름
   - accept-charset
     - 문자 인코딩 방식
   - autocomplete

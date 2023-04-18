@@ -102,5 +102,55 @@
   - auto
 - overflow-x, overflow-y 를 통해 수평, 수직 방향으로 구분해 오버플로의 처리 방법을 지정할 수 있음
 
+#### 화면 표시 : visibility 속성
+
+- 값
+  - visible
+  - hidden
+    - 화면에 표시하지 않지만, 페이지에서 원래 공간은 그대로 차지
+  - collapse
+    - hidden과 동일
+    - 단, 테이블 요소의 경우에는 행/열 제거
+
+#### 플로팅 : float 속성
+
+- 콘텐츠의 일반적인 흐름을 벗어나서 부모 요소 영역을 기준으로 해당 요소를 왼쪽/오른쪽에 배치하도록 지정
+
+#### 플로팅 : clear 속성
+
+- float 속성의 영향을 받는 요소의 흐름을 해제하여 바로 아래쪽에 요소를 배치하도록 지정
+
+#### 박스의 크기 : box-sizing
+
+- width / height 속성을 사용하여 요소의 폭과 높이를 지정할 때 패딩과 테두리를 포함시킬지의 여부 지정
+- 값
+  - content-box
+  - border-box
+
+#### 박스의 크기 : resize 속성
+
+- 사용자가 요소 박스의 크기를 조절할 수 있도록 지정
+- 값
+  - none
+  - both
+  - horizontal
+  - vertical
+- overflow
+  - hidden, scroll, auto 속성과 함께 사용해야 함.
+
 ### 테두리
 
+#### boder 관련 속성
+
+- border-width
+- border-style
+- border-color
+- 속성값의 개수에 따라서 마진과 패딩처럼 적용된다.
+
+#### border-radius
+
+- 요소 박스의 각 모서리를 둥글게 지정
+
+#### box-shadow
+
+- 박스 요소에 그림자 스타일 지정
