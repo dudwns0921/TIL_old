@@ -8,7 +8,7 @@
 
 - ## [4강. HTML 요소: 웹 폼](./chapter4.md)
 
-
-
 - ## [5강. CSS: 개요, 선택자, 색상](./chapter5.md)
-- ## [6강. CSS: 개요, 선택자, 색상](./chapter6.md)
+- ## [6강. CSS: 글꼴, 텍스트, 리스트, 테이블](./chapter6.md)
+- ## [7강. CSS: 박스 모델, 테두리](./chapter7.md)
+- ## [8강. CSS: 배경, 그라데이션, 변형](./chapter8.md)
